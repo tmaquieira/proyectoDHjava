@@ -1,0 +1,464 @@
+body { /*por default, para q no quede todo pegado a los bordes, css me da un marggin predeterminado. para eliminarlo al principio del CSS pongo margin y paddin 0 */
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  font-weight: bold;
+  background-color: #e4fc28;
+}
+
+div.contengoTodo{
+  background-image: url(../img/fondito.jpg);
+  background-repeat: repeat;
+}
+
+header {/*lo primero de la estructura es un header. por ser un div de bloque, midel el 100% del ancho x lo tanto no hace falta decirle cuanto tiene q ocupar  */
+  border: black 2px solid;
+  text-align: justify;
+  background-color:#ddb4ed;
+  padding: 10px;
+  overflow: hidden;
+}
+.carritoMenu{
+  width: 20px;
+  background-image: url(../img/carrito.png);
+}
+.carritoMenu:hover{
+  background-image: url(../img/carritoB.png);
+}
+main.centrameElRegistro {
+  text-align:center;
+}
+
+ .h2FAQ{
+   background-color: #ddb4ed;
+   padding-left: 10px;
+
+ }
+
+ .h2MENU{
+   background-color: #ddb4ed;
+   font-size: 30px;
+   padding-left: 10px;
+ }
+
+.coloresProducto{
+overflow: hidden;
+}
+
+.colorcito{
+  float: left;
+  margin: 2px;
+}
+
+ h2.h2Client{
+font-size: 40px;
+text-align: center;
+background-color: #ddb4ed;
+}
+
+h3{
+  font-size: 15px;
+}
+.MainclientProfile{
+  margin-bottom: 20px;
+}
+
+.linksProfile{
+  font-size: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+ .popUp{
+   background-image: url(img/carta.png);
+   background-repeat: no-repeat;
+   height: 10%;
+  position:fixed;
+  right: 20px;
+  bottom: 45px;
+  opacity: 0.35;
+  z-index: 999;
+ }
+ .popUp:hover{
+  height: 15%;
+  opacity: 1;
+  transition: 2s;
+ }
+
+div.contengoTodo {
+/*  width: 60%;
+  height: 50%;*/
+  border: black 2px solid;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+header img #logo {/* el header, q adentro tiene una img con id logo*/
+  width: 150px;
+  margin-left: 10px;
+}
+
+header nav{ /*el header q adentro tiene un nav (q por default es display block).. la etiqueta img es de linea pero el nav es de bloque (y necesita ocupar el 100% de su padre).*/
+  display: inline-block;
+  float:right; /* la img ya la tengo a la izq pero quiero el menu a la derecha*/
+  margin-top: 30px; /* para posicionarlo mas abajo en el header*/
+  margin-right: 10px;
+}
+
+header nav a{ /* el header q tiene un nav y dentro links*/
+  margin-right: 15px; /* para generar espacio entre cada link. uso margin rigth pq aprovecho y separo al ultimo de lavegador*/
+  font-size: 18px;
+}
+
+header nav a:hover{
+  font-style: italic;
+  color: yellow;
+}
+
+a:hover{
+  color:;
+}
+
+div.carrousel img{ /*por ser un div, el carrousel ya ocupa el 100% del ancho, el problema es el tamaño de la imagen*/
+  width: 100%;
+  filter:grayscale(100%);
+}
+div.carrousel img:hover{ /*por ser un div, el carrousel ya ocupa el 100% del ancho, el problema es el tamaño de la imagen*/
+  transition: 2s;
+  filter:grayscale(0%);
+}
+
+div.selectProductos select {
+  width: 100%;
+  height: 60px;
+  background-color: #e6ff1c;
+  font-size: 18px;
+  font-family: monospace;
+  font-weight: bold;
+  border: black 2px solid;
+  border-top: 0px;
+}
+
+div.selectProductos select option{
+  font-size: 18px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+main.contenedorProductos {
+  overflow: hidden;
+}
+
+section.previewDeProductos {
+  overflow: hidden;
+}
+
+
+
+
+article.previewUnProducto {
+  display: inline-block; /*para q me deje ponerlos uno al lado del otro sin q dejen de ser bloques*/
+  width: 28%;
+  background-color: #efff6e;
+  margin-left: 2.5%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  float: left;
+  padding: 10px;
+}
+
+article.previewUnProducto img.imgPreviewProducto{
+  border: #c558f0 4px dashed;
+  width: 98%;
+  float: left;
+}
+
+article.previewUnProducto h2{
+  float: left;
+  font-size: 25px;
+  margin-top: 8px;
+}
+
+article.previewUnProducto p.price {
+  font-size: 20px;
+  margin-bottom: 0px;
+  display: inline-block;
+  float: left;
+}
+
+
+article.previewUnProducto a.verMas{
+  display: inline-block;
+  float: right;
+  right: 10px;
+  padding: 5px;
+  background-color: #ddb4ed;
+  border-radius: 5px;
+  font-family: 'Pacifico', cursive;
+  font-size: 10px;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  }
+
+article.previewUnProducto a.verMas:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+article.previewUnProducto p{
+    float: left;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    }
+
+
+
+    article.productoDetalle {
+      display: inline-block; /*para q me deje ponerlos uno al lado del otro sin q dejen de ser bloques*/
+      width: 95%;
+      background-color: #e4fc28;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
+      border: 2px solid black;
+      overflow: hidden;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+
+    article.productoDetalle img{
+      float: left;
+    }
+    article.productoDetalle a{
+      float: right;
+      margin-left: 15px;
+      text-decoration: none;
+      color: black;
+      background-color: #ddb4ed;
+      height: 22px;
+      width: 120px;
+      text-align: center;
+      padding: 4px;
+      border-radius: 10px;
+      padding: 6px;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-bottom: 0px;
+      }
+
+
+h1{
+  font-size: 30px;
+  color:#c558f0;
+}
+
+h1.h1describimeProducto{
+text-align:center}
+
+h2{
+  font-size: 20px;
+  font-family: 'Pacifico', cursive;
+  /*text-transform: capitalize;*/
+}
+.describimeProducto{
+  overflow: hidden;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+
+}
+
+.imgDelProducto{
+  float: left;
+  border: #c558f0 6px solid;
+}
+
+
+
+.texDelProducto{
+  width: 45%;
+  float: left;
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  right: 50px;
+}
+
+.texDelProducto p{
+  font-family: 'Roboto', sans-serif;
+}
+
+.texDelProducto p, .texDelProducto span {
+  font-size: 20px;
+}
+
+.texDelProducto h2{
+  font-size: 30px;
+}
+
+button.laQuiero{
+  float: right;
+  position: relative;
+/*position: absolute;
+  bottom: 10px;
+  right: 50px;*/
+  font-size: 35px;
+  background-color: #ddb4ed;
+  border-radius: 10px;
+  padding:6px;
+  font-family: 'Pacifico', cursive;
+  border: 0px solid transparent;
+  }
+/*  #iconoLaQuiero{
+      width: 40px;
+      height: 40px;
+    }*/
+
+    button:hover{
+      background-color: white;
+    }
+
+.botonRegistrar{
+  font-size: 20px;
+  background-color: #ddb4ed;
+  border-radius: 10px;
+  padding:10px;
+  font-family: 'Pacifico', cursive;
+  border: 0px solid transparent;
+}
+
+
+.describimeCarrito{
+  overflow: hidden;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+
+}
+
+.imgDelCarrito{
+  float: left;
+  border: #c558f0 3px dotted;
+}
+
+.texDelCarrito{
+  width: 45%;
+  float: left;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-left: 20px;
+
+}
+
+.texDelCarrito span {
+  font-size: 15px;
+}
+
+.texDelCarrito h2{
+  font-size: 20px;
+}
+
+button.laCompro{
+  float: right;
+  position: relative;
+  font-size: 30px;
+  background-color: #ddb4ed;
+  border-radius: 8px;
+  padding:5px;
+  font-family: 'Pacifico', cursive;
+  border: 0px solid transparent;
+}
+
+button.laCompro:hover{
+background-color: white;
+}
+
+.contieneRegistro{
+  background-color:#efff6e;
+  border: 2px solid black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+i{
+  font-size: 15px;
+}
+
+a {
+text-decoration: none;
+color: black;
+}
+
+
+
+#icono{
+    width: 20px;
+    height: 20px;
+  }
+
+
+textarea {
+  width: 50%;
+  height: 100px;
+}
+
+footer {
+    background-color: #ddb4ed;
+    padding: 10px;
+    font-size: 15px;
+    overflow: hidden;
+    text-align: center;
+border: black 2px solid;
+  }
+
+footer div.mapaDelSitio {
+  float:left;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+
+  text-align: left;
+}
+footer div.infoFooter{
+  float:left;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  font-style: italic;
+
+}
+footer div.enganchalo{
+  position: absolute;
+  right: 0px;
+  float:left;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+
+footer div.mapaDelSitio a{
+    font-size: 15px;
+    }
+
+footer h3{
+    font-size: 20px;
+  }
+
+footer a, .contieneRegistro a, a.linksProfile{
+    color: #c558f0;
+  }
+.contieneRegistro a:hover, a.linksProfile:hover{
+  color: red;
+  }
+
+footer a:hover {
+    color: yellow;
+  }
+
+  /*text-transform: uppercase;*/

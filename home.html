@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr"> <!--lenguaje español-->
+<head>
+  <meta charset="utf-8">
+  <link href="fontawesome-free-5.10.2-web/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estiloGlobal.css">
+  <title>Juanita Jo | E-Commerce</title>
+</head>
+
+<body>
+
+  <div class="contengoTodo"> <!--creo mi primer contenedor q va a ser el contenedor principal de todo el sitio-->
+
+    <header><!--es el primer hijo de mi sitio, pq es lo primero q lee.-->
+      <a href="home.html"><img id="logo" src="img/logo.png" alt="Juanita Jo - Logo"></a>
+        <nav>|<a href="home.html"> HOME</a>|<a href="faq.html"> FAQ</a>|<a href="registro.html"> REGISTRATE</a>|<a href="login.html"> LOGIN</a>|<a href="contact.html"> CONTACTO</a>|<a href="clientProfile.html"> MI PERFIL</a>| <a class="carritoMenu" href="carrito.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+        </nav>
+    </header>
+
+        <div class="selectProductos"> <!--despues del encabezado viene un div para las categorias-->
+                <select name="listaProductos" onchange="location = this.value;"> <!--para hacer el boton desplegable de categorias-->
+                  <option value="">Seleccioná una Categoría</option><!-- el primero siempre dice lo q el usuario tiene q hacer-->
+                  <option value="#carteras">CARTERAS</option>
+                  <option value="#mochilas">MOCHILAS</option>
+                  <option value="#billeteras">BILLETERAS</option>
+                </select>
+              </div>
+
+        <div class="carrousel"> <!--segun la org del sitio, despues de las categorias vine el carrousel (para usarlo necesito JS)-->
+                <img src="img/carrousel3.jpg" alt="Juanita Jo - Imágen Publicitaria" height="500px">
+                <!--<img src="img/carrousel2.jpg" alt="segunda imagen del carrousel">
+                <img src="img/carrousel3.jpg" alt="tercer imagen del carrousel">   <!--el carrousel dentro va a tener 3 imagenes, pero las dejo comentadas pq necesito JS para darle animacion-->
+              </div>
+
+<main class="contenedorProductos">
+<h1>NUESTROS PRODUCTOS</h1>
+      <section class= "previewDeProductos" id="carteras"> <!-- creo un nuevo padre que contenga a todos los productos-->
+<h2 class="h2MENU">Carteras</h2>
+        <article class="previewUnProducto"> <!-- cada producto va a ser un articulo-->
+          <img class="imgPreviewProducto"src="img/cartera.jpg" alt="producto"> <!--cada art va a tener dentro una imagen del producto, el precio y el boton de comprar-->
+          <h2>Cartera Tuvi</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="price">$ 3.599,00 (+ IVA)</p>
+          <a class="verMas" href="productDetail.html" ><img src="img/lupa.png" id="icono"> Ver Más</a>
+        </article>
+        <article class="previewUnProducto"> <!-- cada producto va a ser un articulo-->
+          <img class="imgPreviewProducto"src="img/cartera.jpg" alt="producto"><!--cada art va a tener dentro una imagen del producto, el precio y el boton de comprar-->
+          <h2>Cartera Tuvi</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="price">$ 3.599,00 (+ IVA)</p>
+          <a class="verMas"href="productDetail.html" ><img src="img/lupa.png" id="icono"> Ver Más</a>
+        </article>
+        <article class="previewUnProducto"> <!-- cada producto va a ser un articulo-->
+        <img class="imgPreviewProducto"src="img/cartera.jpg" alt="producto"><!--cada art va a tener dentro una imagen del producto, el precio y el boton de comprar-->
+          <h2>Cartera Tuvi</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="price">$ 3.599,00 (+ IVA)</p>
+          <a class="verMas"href="productDetail.html" ><img src="img/lupa.png" id="icono"> Ver Más</a>
+        </article>
+          </section>
+
+          <section class= "previewDeProductos" id="mochilas"> <!-- creo un nuevo padre que contenga a todos los productos-->
+            <h2 class="h2MENU">Mochilas</h2>
+            <article class="previewUnProducto"> <!-- cada producto va a ser un articulo-->
+              <img class="imgPreviewProducto"src="img/mochila.jpg" alt="producto"><!--cada art va a tener dentro una imagen del producto, el precio y el boton de comprar-->
+              <h2>Mochila Mivi</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="price">$ 3.599,00 (+ IVA)</p>
+              <a class="verMas"href="productDetail.html" ><img src="img/lupa.png" id="icono"> Ver Más</a>
+            </article>
+            <article class="previewUnProducto"> <!-- cada producto va a ser un articulo-->
+            <img class="imgPreviewProducto"src="img/mochila.jpg" alt="producto"><!--cada art va a tener dentro una imagen del producto, el precio y el boton de comprar-->
+              <h2>Mochila Mivi</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="price">$ 3.599,00 (+ IVA)</p>
+              <a class="verMas"href="productDetail.html" ><img src="img/lupa.png" id="icono"> Ver Más</a>
+            </article>
+            <article class="previewUnProducto"> <!-- cada producto va a ser un articulo-->
+            <img class="imgPreviewProducto"src="img/mochila.jpg" alt="producto"><!--cada art va a tener dentro una imagen del producto, el precio y el boton de comprar-->
+              <h2>Mochila Mivi</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="price">$ 3.599,00 (+ IVA)</p>
+              <a class="verMas"href="productDetail.html" ><img src="img/lupa.png" id="icono"> Ver Más</a>
+            </article>
+            </section>
+
+            <section class= "previewDeProductos" id="billeteras"> <!-- creo un nuevo padre que contenga a todos los productos-->
+              <h2 class="h2MENU">Billeteras</h2>
+              <article class="previewUnProducto"> <!-- cada producto va a ser un articulo-->
+              <img class="imgPreviewProducto"src="img/billetera.jpg" alt="producto"><!--cada art va a tener dentro una imagen del producto, el precio y el boton de comprar-->
+                <h2>Billetera Lavi</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="price">$ 3.599,00 (+ IVA)</p>
+                <a class="verMas"href="productDetail.html" ><img src="img/lupa.png" id="icono"> Ver Más</a>
+              </article>
+              <article class="previewUnProducto"> <!-- cada producto va a ser un articulo-->
+              <img class="imgPreviewProducto"src="img/billetera.jpg" alt="producto"><!--cada art va a tener dentro una imagen del producto, el precio y el boton de comprar-->
+                <h2>Billetera Lavi</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="price">$ 3.599,00 (+ IVA)</p>
+                <a class="verMas"href="productDetail.html" ><img src="img/lupa.png" id="icono"> Ver Más</a>
+              </article>
+              <article class="previewUnProducto"> <!-- cada producto va a ser un articulo-->
+              <img class="imgPreviewProducto"src="img/billetera.jpg" alt="producto"><!--cada art va a tener dentro una imagen del producto, el precio y el boton de comprar-->
+                <h2>Billetera Lavi</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="price">$ 3.599,00 (+ IVA)</p>
+                <a class="verMas"href="productDetail.html" ><img src="img/lupa.png" id="icono"> Ver Más</a>
+              </article>
+      </section>
+    </main>
+
+<footer><!--etiqueta de bloque q ocupa el 100% del ancho-->
+  <div class="mapaDelSitio">
+    <h3>MAPA DEL SITIO</h3>
+    <ul>
+      <li><a href="home.html"> HOME</a></li>
+      <li><a href="faq.html"> FAQ</a></li>
+      <li><a href="registro.html"> REGISTRATE</a></li>
+      <li><a href="login.html"> LOGIN</a></li>
+      <li><a href="contact.html"> CONTACTO</a></li>
+      <li><a href="clientProfile.html"> MI PERFIL</a></li>
+    </ul>
+  </div>
+  <div class="infoFooter">
+    <p>Juanita Jo es una marca registrada, © 2019.</p>
+    <p><a href="https://juanitajo.com">https://juanitajo.com</a>
+    <p>Diseño y desarrollo por TUVI!</p>
+  </div>
+  <div class="enganchalo">
+    <h3>¡¡¡GRACIAS POR VISITARNOS!!!</h3>
+    <a href="clientProfile.html#suscribite"><p>¡Suscribite!</p></a>
+    <span>Seguinos también en...</span>
+    <a href="https://www.facebook.com/juanitajofan"><i class="fab fa-facebook-square"></i></a>
+    <a href="https://www.instagram.com/juanitajooficial"><i class="fab fa-instagram"></i></a>
+    <a href="https://twitter.com/juanitajook"><i class="fab fa-twitter"></i></a>
+    <a href="https://api.whatsapp.com/send?phone=541128862455"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</footer>
+    </div>
+  </body>
+</html>
+
+
+<!--LISTA DE SELECCION CON HIPERVINCULOS A OTRAS HTML
+
+<select name="listaProductos" onchange="location = this.value;">
+  <option value="">SELECCIONA UNA CATEGORIA</option>
+  <option value="faq.html">CATERAS</option>
+  <option value="">MOCHILAS</option>
+  <option value="">BILLETERAS</option>
+</select>
+
+<img src="img/facebook.png" alt="icono de facebook">
+<img src="img/twitter.png" alt="icono de twitter">
+<img src="img/whatsapp.png" alt="icono de whatsapp">
+<img src="img/instagram.png" alt="icono de instagram">
+
+
+
+<div class="contenedorProductos" id="">
+      <section class= "productos" id="carteras">
+        <article class="producto">
+          <img src="img/carrousel2.jpg" alt="producto">
+          <a href="home.html"><p>Cartera TUVI</p></a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <span>$ 3599</span>
+          <a href="#" class="verMas"><img src="img/carrito.png" id="icono">Comprar</a>
+        </article>
+        <article class="producto">
+          <img src="img/carrousel2.jpg" alt="imagen del producto">
+          <a href="home.html"><p>Cartera TUVI</p></a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <span>$ 2999</span>
+          <a href="#"class="verMas"><img src="img/carrito.png" id="icono">Comprar</a>
+        </article>
+        <article class="producto">
+          <img src="img/carrousel2.jpg" alt="imagen del producto">
+          <a href="home.html"><p>Cartera TUVI</p></a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <span>$ 4249</span>
+          <a href="#"class="verMas"><img src="img/carrito.png" id="icono">Comprar</a>
+        </article>
+          </section>
+            <section class= "productos" id="mochilas">
+        <article class="producto">
+          <img src="img/carrousel2.jpg" alt="imagen del producto">
+          <a href="home.html"><p>Mochila TUVI</p></a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <span>$ 3699</span>
+          <a href="#"class="verMas"><img src="img/carrito.png" id="icono">Comprar</a>
+        </article>
+        <article class="producto">
+          <img src="img/carrousel2.jpg" alt="imagen del producto">
+          <a href="home.html"><p>Mochila TUVI</p></a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <span>$ 3399</span>
+          <a href="#"class="verMas"><img src="img/carrito.png" id="icono">Comprar</a>
+        </article>
+        <article class="producto">
+          <img src="img/carrousel2.jpg" alt="imagen del producto">
+          <a href="home.html"><p>Mochila TUVI</p></a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <span>$ 4199</span>
+          <a href="#"class="verMas"><img src="img/carrito.png" id="icono">Comprar</a>
+        </article>
+          </section>
+            <section class= "productos" id="billeteras">
+        <article class="producto">
+          <img src="img/carrousel2.jpg" alt="imagen del producto">
+          <a href="home.html"><p>Billetera TUVI</p></a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <span>$ 2999</span>
+          <a href="#"class="verMas"><img src="img/carrito.png" id="icono">Comprar</a>
+        </article>
+        <article class="producto">
+          <img src="img/carrousel2.jpg" alt="imagen del producto">
+          <a href="home.html"><p>Billetera TUVI</p></a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <span>$ 4249</span>
+          <a href="#"class="verMas"><img src="img/carrito.png" id="icono">Comprar</a>
+        </article>
+        <article class="producto">
+          <img src="img/carrousel2.jpg" alt="imagen del producto">
+          <a href="home.html"><p>Billetera TUVI</p></a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <span>$ 3699</span>
+          <a href="#"class="verMas"><img src="img/carrito.png" id="icono">Comprar</a>
+        </article>
+      </section>
+      </div>
+
+
+-->

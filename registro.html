@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link href="fontawesome-free-5.10.2-web/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estiloGlobal.css">
+  <title>Juanita Jo | Registrate</title>
+</head>
+  <body>
+    <div class="contengoTodo">
+      <header><!--es el primer hijo de mi sitio, pq es lo primero q lee.-->
+        <a href="home.html"><img id="logo" src="img/logo.png" alt="Juanita Jo - Logo"></a>
+        <nav>|<a href="home.html"> HOME</a>|<a href="faq.html"> FAQ</a>|<a href="registro.html"> REGISTRATE</a>|<a href="login.html"> LOGIN</a>|<a href="contact.html"> CONTACTO</a>|<a href="clientProfile.html"> MI PERFIL</a>| <a class="carritoMenu" href="carrito.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+        </nav>
+
+      </header>
+          <main class="centrameElRegistro">
+            <section class="contieneRegistro">
+          <h1>REGISTRATE</h1>
+          <h2>¿Ya tenés una cuenta?<a href="login.html"> ¡Iniciá Sesión! </a></h2>
+            <form action="clientProfile.html" method="post">
+              <p><label for="nombre"> Nombre </label>
+              <input id ="nombre" type="text" name="nombre" placeholder="Ingrese sus nombres" required=" "></p>
+
+              <p><label for="apellido"> Apellido </label>
+              <input id ="apellido" type="text" name="apellido" placeholder="Ingrese su apellido" required=" "></p>
+
+              <p><label for="nacionalidad"> País de nacimiento </label>
+        				<select name="nacionalidad" id="nacionalidad" required=" ">
+        					<option value="void"> Seleccione uno</option>
+        					<option value="arg">Argentina</option>
+        					<option value="bol">Bolivia</option>
+        					<option value="bra">Brasil</option>
+        					<option value="chi">Chile</option>
+        					<option value="uru">Uruguay</option>
+        				</select></p>
+
+              <p><label for="mail"> Dirección de correo electrónico </label>
+              <input id ="mail" type="email" name="mail" placeholder="unmail@unmail.com" required=" "></p>
+
+              <p><label for="contraseña"> Contraseña </label>
+              <input id ="contraseña" type="password" name="contraseña" placeholder=" " required=" "></p>
+
+              <p><label for="nacimiento"> Fecha de nacimiento (Opcional) </label>
+              <input id ="nacimiento" type="date" name="nacimiento" required></p>
+              <p>(Ejemplo: 31/05/1970)</p>
+
+              <p><label for="suscripcion"> ¿Querés suscribite a nuestro newsletter? (Podés desuscribirte cuando quieras)</label></p>
+              <p><input type="radio" name="sus" value="si"> Dale!
+              <input type="radio" name="sus" value="no"> No, gracias.
+
+              <p><label for="tipoDeSuscripcion">Me interesaría recibir info de...</label></p>
+        			<p><input type="checkbox" name="gustos" value="carte"> Carteras
+        			<input type="checkbox" name="gustos" value="mochi"> Mochilas
+        			<input type="checkbox" name="gustos" value="bille"> Billeteras
+        			<input type="checkbox" name="gustos" value="todo"> Todo </p>
+
+              <p><button class="botonRegistrar" type="submit" name="guardar" value="enviar"> Guardar </button> <button class="botonRegistrar" type="reset" name="borrar" value="borrar"> Vaciar </button></p>
+            </form>
+          </section>
+
+          </main>
+          <footer><!--etiqueta de bloque q ocupa el 100% del ancho-->
+            <div class="mapaDelSitio">
+              <h3>MAPA DEL SITIO</h3>
+              <ul>
+                <li><a href="home.html"> HOME</a></li>
+                <li><a href="faq.html"> FAQ</a></li>
+                <li><a href="registro.html"> REGISTRATE</a></li>
+                <li><a href="login.html"> LOGIN</a></li>
+                <li><a href="contact.html"> CONTACTO</a></li>
+                <li><a href="clientProfile.html"> MI PERFIL</a></li>
+              </ul>
+            </div>
+            <div class="infoFooter">
+              <p>Juanita Jo es una marca registrada, © 2019.</p>
+              <p><a href="https://juanitajo.com">https://juanitajo.com</a>
+              <p>Diseño y desarrollo por TUVI!</p>
+            </div>
+            <div class="enganchalo">
+              <h3>¡¡¡GRACIAS POR VISITARNOS!!!</h3>
+              <a href="clientProfile.html#suscribite"><p>¡Suscribite!</p></a>
+              <span>Seguinos también en...</span>
+              <a href="https://www.facebook.com/juanitajofan"><i class="fab fa-facebook-square"></i></a>
+              <a href="https://www.instagram.com/juanitajooficial"><i class="fab fa-instagram"></i></a>
+              <a href="https://twitter.com/juanitajook"><i class="fab fa-twitter"></i></a>
+              <a href="https://api.whatsapp.com/send?phone=541128862455"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </footer>
+      </div>
+      </body>
+</html>
