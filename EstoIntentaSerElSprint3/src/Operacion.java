@@ -1,37 +1,26 @@
 import java.util.Date;
 
 public class Operacion {
+	private static Integer contadorOperaciones = 0;
 	private Integer idOperacion;
 	private String metodoDePago;
 	private Date fecha;
 	private Double precioFinal;
-	//claves foraneas
+	// claves foráneas?
 	private Usuario usuarioId;
 	private Carrito carrito;
-	
-	 
 
-	
-	public Operacion(Integer idOperacion, String metodoDePago, Carrito carrito /*Double precioFinal*/) {
-		this.idOperacion = idOperacion;
+	public Operacion(String metodoDePago, Carrito carrito) {
+		contadorOperaciones += 1; 
+		this.idOperacion = contadorOperaciones;
 		this.metodoDePago = metodoDePago;
 		this.fecha = new Date();
-		this.precioFinal = precioFinal;
+		this.precioFinal = carrito.mostrarTotal();
 		this.carrito = carrito;
 	}
 
-	/*public Double calcularPrecio(){
-		Double precioInicial = carrito.mostrarTotal();
-		//APLICAR DESCUENTO
-
-	}*/
-
 	public Integer getIdOperacion() {
 		return idOperacion;
-	}
-
-	public void setIdOperacion(Integer idOperacion) {
-		this.idOperacion = idOperacion;
 	}
 
 	public String getMetodoDePago() {
@@ -54,13 +43,18 @@ public class Operacion {
 		return precioFinal;
 	}
 
-	public void setPrecioFinal(Double precioFinal) {
+	/*public void setPrecioFinal(Double precioFinal) {
 		this.precioFinal = precioFinal;
-	}
+	}*/
+
 	public void emitirFactura() {
 		System.out.println("Valor de la factura es:" + this.precioFinal);
 	}
-	
-	
 
+	/*
+	 * public Double calcularPrecio(){ 
+	 * Double precioInicial = carrito.mostrarTotal(); //APLICAR DESCUENTO
+	 * 
+	 * }
+	 */
 }
