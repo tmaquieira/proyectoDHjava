@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping
 public class HomeController {
 	
-	@GetMapping
-	public String irAHome ( ) {
+	@GetMapping("/")
+	public String irAHome () {
 		return "home";
 	}
 	
@@ -22,4 +22,10 @@ public class HomeController {
 	public String irATodosLosClientes() {
 		return "clientes";
 	}
-}
+	
+	@RequestMapping("/shoppingCart")
+	public String irACarrito ( ) {
+		return "shoppingCart";
+	}
+	}
+

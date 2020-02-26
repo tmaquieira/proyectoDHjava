@@ -36,7 +36,7 @@ public class Usuario {
 	
 	private String mail;
 	
-	private String contraseña;
+	private String contrasenia;
 	
 	
 	
@@ -46,7 +46,7 @@ public class Usuario {
 
 
 	public Usuario(Integer id, String nombre, String apellido, Date fechaDeNacimiento, String nacionalidad,
-			String dni, String domicilio, String telFijo, String telCelular, String mail, String contraseña) {
+			String dni, String domicilio, String telFijo, String telCelular, String mail, String contrasenia) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -58,7 +58,7 @@ public class Usuario {
 		this.telFijo = telFijo;
 		this.telCelular = telCelular;
 		this.mail = mail;
-		this.contraseña = contraseña;
+		this.contrasenia = contrasenia;
 	}
 
 
@@ -182,14 +182,14 @@ public class Usuario {
 
 
 
-	public String getContraseña() {
-		return contraseña;
+	public String getContrasenia() {
+		return contrasenia;
 	}
 
 
 
 	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+		this.contrasenia = contrasenia;
 	}
 
 	

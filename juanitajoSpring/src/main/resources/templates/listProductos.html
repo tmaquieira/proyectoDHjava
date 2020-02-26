@@ -8,42 +8,30 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Todos los clientes</title>
+    <title>Todos los Productos</title>
   </head>
   <body>
-    <h1>Lista de todos los clientes</h1>
+    <h1>Lista de todos los Productos</h1>
     <table class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col">id</th>
       <th scope="col">nombre</th>
-      <th scope="col">apellido</th>
-      <th scope="col">fechaDeNacimiento</th>
-      <th scope="col">nacionalidad</th>
-      <th scope="col">dni</th>
-      <th scope="col">domicilio</th>
-      <th scope="col">telFijo</th>
-      <th scope="col">telCelular</th>
-      <th scope="col">mail</th>
-      <th scope="col">contrasenia</th>
-      
+      <th scope="col">descripcion</th>
+      <th scope="col">precio</th>
+      <th scope="col">color</th>
+      <th scope="col">stock</th>       
     </tr>
   </thead>
   <tbody>
-    <tr th:each="unUsuario:${listaDeUsuarios}">
-      <th scope="row" th:text="${unUsuario.id}">ux</th>
-      <td th:text="${unUsuario.nombre}"></td>
-      <td th:text="${unUsuario.apellido}"></td>
-      <td th:text="${unUsuario.fechaDeNacimiento}"></td>
-      <td th:text="${unUsuario.nacionalidad}"></td>
-      <td th:text="${unUsuario.dni}"></td>
-      <td th:text="${unUsuario.domicilio}"></td>
-      <td th:text="${unUsuario.telFijo}"></td>
-      <td th:text="${unUsuario.telCelular}"></td>
-      <td th:text="${unUsuario.mail}"></td>
-      <td th:text="${unUsuario.contrasenia}"></td>
-      
-   
+    <tr th:each="unProducto:${listaDeProductos}">
+      <th scope="row" th:text="${unProducto.id}"></th>
+      <td th:text="${unProducto.nombre}"></td>
+      <td th:text="${unProducto.descripcion}"></td>
+      <td th:text="${unProducto.precio}"></td>
+      <td th:text="${unProducto.color}"></td>
+      <td th:text="${unProducto.stock}"></td>
+       
   </tbody>
 </table>
 
