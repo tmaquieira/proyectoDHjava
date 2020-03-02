@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="fontawesome/css/all.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald|Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estiloGlobal.css">
+<title>Juanita Jo | E-Commerce</title>
+</head>
+
+<body>
+  <div class="contengoTodo">
+    <header>
+      <div class="contenedorLogoMenu">
+		<a th:href="@{http://localhost:50/home.html}"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
+        <div class="contenedorMenu">
+          <nav>
+          <a th:href="@{http://localhost:50/registroClientes/add}">CLIENTES</a><a th:href="@{http://localhost:50/registroProductos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+          </nav>
+                  </div>
+      </header>
+
+      <main class="centrameElLogin">
+        <h1>LOGIN</h1>
+
+        <section class="contieneLogin">
+
+          <div class="contieneImgLogin">
+            <img src="img/imglogin.jpg" alt="Juanita Jo - Login">
+          </div>
+
+          <div class="contieneFormLogin">
+          <form class="formLogin" action="clientProfile.html" method="post">
+            <h2><a th:href="@{http://localhost:50/registroClientes/add}">¿No tenés cuenta? ¡Registrate!</a></h2>
+            <p><label for="email">E-mail</label>
+              <input class="inputEmail" type="email" name="email" value="" placeholder="tumail@mail.com" required> <!--REPASAR LOS VIDEOS DE TIPOS DE RELLENO, DESPLAZAMIENTO Y POR QUÈ SE LE PONE ID A LOS INPUT-->
+              <span style="font-size:1em;" class="errorEmail"></span></p>
+
+              <p><label for="pass">Contraseña</label>
+                <input class="inputPass" type="password" name="pass" value="" placeholder="" required>
+                <span style="font-size:1em;" class="errorPassword"></span></p>
+
+                <a href="home.html"><p>¿Olvidaste la Contraseña?</p></a>
+                <p><input id="recordarmeCheck" type="checkbox" name="termsyconds" value="rememberme"> Recordarme </p>
+
+                <p><button class= "botonLoguear" type="submit">Ingresar</button>
+
+                </form>
+              </div>
+              </section>
+            </main>
+<footer>
+			<div class="footerIconitosBellos">
+				<div class="footercontengoIconitosBellos">
+					<div class="contengoIconitoFooter">
+						<img src="img/footer1.jpg" alt="Envío a domicilio a todo el país">
+						<p class="pIconitos">
+							<span>ENVÍOS A TODO EL PAÍS</span>
+						</p>
+					</div>
+					<div class="contengoIconitoFooter">
+						<img src="img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
+						<p class="pIconitos">
+							<span><a href="contact.html#sucursales">ENCONTRÁ NUESTRAS TIENDAS</a></span>
+						</p>
+					</div>
+					<div class="contengoIconitoFooter">
+						<img src="img/footer3.jpg" alt="Formá parte de Juanita Jo">
+						<p class="pIconitos">
+							<span>FORMÁ PARTE DE JUANITA JO</span>
+						</p>
+					</div>
+					<div class="contengoIconitoFooter">
+						<img src="img/footer4.jpg" alt="Contacto Mayoristas">
+						<p class="pIconitos">
+							<span>CONTACTO PARA MAYORISTAS</span>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="contengoTodoLoDemásDelFooter">
+
+				<div class="footerSeguinos">
+					<div class="contengoFooterSeguinos">
+
+						<h3>GRACIAS POR VISITARNOS</h3>
+						<h4>REDES SOCIALES</h4>
+						<nav>
+							<a href="https://www.facebook.com/juanitajofan"><i
+								class="fab fa-facebook"></i></a> <a
+								href="https://www.instagram.com/juanitajooficial"><i
+								class="fab fa-instagram"></i></a> <a
+								href="https://twitter.com/juanitajook"><i
+								class="fab fa-twitter"></i></a> <a
+								href="https://api.whatsapp.com/send?phone=541128862455"><i
+								class="fab fa-whatsapp"></i></a>
+						</nav>
+						<a href="perfilCliente.html#suscribite">Suscribite a nuestro
+							Newsletter</a>
+						<form class="suscribiteMini"
+							action="perfilCliente.html#suscribite" method="post">
+							<input class="inputEmailSus" type="email" name="email" value=""
+								placeholder="tumail@mail.com" required>
+							<button class="botonSuscribir" type="submit">Enviar</button>
+							</p>
+							<p class="pSuscribir">
+								<span class="errorEmailSus"></span>
+							</p>
+						</form>
+					</div>
+
+				</div>
+
+
+				<div class="footerMapaDelSitio">
+					<div class="contengoFooterMapaDelSitio">
+
+						<ul>
+							<h3>MAPA DEL SITIO</h3>
+							<li><a th:href="@{http://localhost:50/home.html}"> HOME</a></li>
+							<li><a th:href="@{http://localhost:50/faq.html}"> FAQ</a></li>
+							<li><a th:href="@{http://localhost:50/registroClientes/add}"> REGISTRATE</a></li>
+							<li><a th:href="@{http://localhost:50/login.html}"> LOGIN</a></li>
+							<li><a th:href="@{http://localhost:50/contact.html}"> CONTACTO</a></li>
+							<li><a th:href="@{http://localhost:50/perfilCliente.html}"> MI PERFIL</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footerInfo">
+					<div class="contengoFooterInfo">
+						<p>Juanita Jo es una marca registrada, © 2019.</p>
+						<p>
+							<a th:href="@{https://juanitajo.com}">https://juanitajo.com</a>
+						<p>Diseño y desarrollo por TUVI!</p>
+					</div>
+				</div>
+		</footer>
+            </div>
+          </div>
+
+
+              <script>
+              window.addEventListener('load',function(){
+                var botLoguear = document.querySelector("button.botonLoguear");
+                botLoguear.addEventListener('click',function(evento){
+
+                  var posiblesErrores = false;
+                  var email = document.querySelector("input.inputEmail");
+                  var password = document.querySelector("input.inputPass");
+                  var errorEmail = document.querySelector("span.errorEmail");
+                  var errorPassword = document.querySelector("span.errorPassword");
+                  var regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+                  var regexPassword = /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/;
+                  var checkBoxR = document.querySelector("input#recordarmeCheck");
+                  var rememberEmail;
+                  var rememberPass;
+                  //traté de usar createTextNode y append, pero no supe cómo eliminar mensajes de validación previos, por lo tanto se me acumulaban en el span.
+
+                  if(regexEmail.test(email.value)){
+                    errorEmail.innerHTML = "";
+                    email.style.border = "1px solid grey";
+                    errorEmail.style.color = "green";
+                    posiblesErrores = false;
+                    if (checkBoxR.checked == true){
+                      var rememberEmail = email.value;
+                    }
+                  } else if (email.value == ""){
+                    evento.preventDefault();
+                    errorEmail.innerHTML = "Tu email es <strong>obligatorio</strong>.";
+                    email.style.border = "1px solid red";
+                    errorEmail.style.color = "red";
+                    posiblesErrores = true;
+                  } else {
+                    evento.preventDefault();
+                    errorEmail.innerHTML = "Tu email <strong>no</strong> es válido.";
+                    email.style.border = "1px solid red";
+                    errorEmail.style.color = "red";
+                    posiblesErrores = true;
+                  }
+
+                  if(regexPassword.test(password.value)){
+                    errorPassword.innerHTML = "";
+                    password.style.border = "1px solid grey";
+                    errorPassword.style.color = "green";
+                    posiblesErrores = false;
+                    if (checkBoxR.checked == true){
+                      var rememberPass = password.value;
+                    }
+                  } else if(password.value == ""){
+                    evento.preventDefault();
+                    errorPassword.innerHTML = "Tu contraseña es <strong>obligatoria</strong>.";
+                    password.style.border = "1px solid red";
+                    errorPassword.style.color = "red";
+                    posiblesErrores = true;
+                  }
+                  //if(!posiblesErrores){
+                  //console.log("Conectado. Bienvenido.");
+                  //}
+                });
+
+                var botSuscribir = document.querySelector("button.botonSuscribir");
+
+                botSuscribir.addEventListener('click',function(evento){
+                  var email = document.querySelector("input.inputEmailSus");
+                  var errorEmail = document.querySelector("span.errorEmailSus");
+                  var regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+
+                  if(regexEmail.test(email.value)){
+                    errorEmail.innerHTML = "";
+                    email.style.border = "1px solid grey";
+                    errorEmail.style.color = "green";
+                    posiblesErrores = false;
+                    if (checkBoxR.checked == true){
+                      var rememberEmail = email.value;
+                    }
+                  } else if (email.value == ""){
+                    evento.preventDefault();
+                    errorEmail.innerHTML = "Tu email es <strong>obligatorio</strong>.";
+                    email.style.border = "1px solid red";
+                    errorEmail.style.color = "red";
+                    posiblesErrores = true;
+                  } else {
+                    evento.preventDefault();
+                    errorEmail.innerHTML = "Tu email <strong>no</strong> es válido.";
+                    email.style.border = "1px solid red";
+                    errorEmail.style.color = "red";
+                    posiblesErrores = true;
+                  }
+                });
+
+
+              })
+            </script>
+          </body>
+</html>

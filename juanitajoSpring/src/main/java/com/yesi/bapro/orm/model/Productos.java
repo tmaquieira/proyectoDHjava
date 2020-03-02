@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name="productos")
+@Entity(name = "productos")
 public class Productos {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,19 +15,21 @@ public class Productos {
 	private Double precio;
 	private String color;
 	private Integer stock;
-
+	
+	
 	public Productos() {
+		super();
 	}
 
 
-	public Productos(Integer id, String descripcion, Integer stock, String nombre, Double precio, String color) {
+	public Productos(Integer id, String nombre, String descripcion, Double precio, String color, Integer stock) {
 		super();
 		this.id = id;
-		this.descripcion = descripcion;
-		this.stock = stock;
 		this.nombre = nombre;
-		precio = precio;
+		this.descripcion = descripcion;
+		this.precio = precio;
 		this.color = color;
+		this.stock = stock;
 	}
 
 
@@ -41,6 +43,16 @@ public class Productos {
 	}
 
 
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
 	public String getDescripcion() {
 		return descripcion;
 	}
@@ -48,6 +60,26 @@ public class Productos {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+
+	public Double getPrecio() {
+		return precio;
+	}
+
+
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+
+
+	public String getColor() {
+		return color;
+	}
+
+
+	public void setColor(String color) {
+		this.color = color;
 	}
 
 
@@ -60,38 +92,6 @@ public class Productos {
 		this.stock = stock;
 	}
 
-
-	public String getNombre() {
-		return nombre;
-	}
-
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
-	public Double getprecio() {
-		return precio;
-	}
-
-
-	public void setprecio(Double precio) {
-		precio = precio;
-	}
-
-
-	public String getColor() {
-		return color;
-	}
-
-
-	public void setColor(String color) {
-		this.color = color;
-	}
 	
 	
-
-	
-
 }

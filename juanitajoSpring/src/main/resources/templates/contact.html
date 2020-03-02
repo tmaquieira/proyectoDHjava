@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="fontawesome/css/all.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald|Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estiloGlobal.css">
+<title>Juanita Jo | E-Commerce</title>
+</head>
+
+<body id=bodyContact>
+	<div class="contengoTodo">
+
+		<header><!--es el primer hijo de mi sitio, pq es lo primero q lee.  |<a href="registro.html"> REGISTRATE</a> <a href="clientProfile.html"> MI PERFIL</a>| <a href="home.html"> HOME</a>|     -->
+			<div class="contenedorLogin">
+				<a href="login.html">INICIAR SESIÓN</a>
+			</div>
+			<div class="contenedorLogoMenu">
+		<a th:href="@{http://localhost:50/home.html}"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
+				<div class="contenedorMenu">
+          <nav>
+          <a th:href="@{http://localhost:50/registroClientes/add}">CLIENTES</a><a th:href="@{http://localhost:50/registroProductos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+          </nav>
+          				</div>
+			</header>
+
+			<main class="centrameElContacto">
+				<h1>CONTACTO</h1>
+				<form class="" action="index.html" method="post">
+				<section class= "contieneContacto"> <!-- creo un nuevo padre que contenga a todos los productos-->
+						<form action="home.html" method="post">
+						<h2 class="h2Contact"><label for="comentarios" id="escribinos">ESCRIBINOS</label></h2>
+						<textarea name="mensaje" placeholder="Escribí tu comentario..." id="escribinosText" required></textarea>
+						<p><button class="botonRegistrar" type="submit" name="button" value="enviar"> Enviar </button> <button class="botonRegistrar" type="reset" name="borrar" value="borrar"> Vaciar </button></p>
+					</form>
+					<h2 class="h2Contact" id="sucursales">SUCURSALES</h2>
+					<div class="contenedorMapaYSelect">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d209925.9280152556!2d-58.51175778471518!3d-34.70284363702784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sjuanita%20jo%20sucursal!5e0!3m2!1ses!2sar!4v1571522214422!5m2!1ses!2sar" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+					<select name="listaProductos" onchange="location = this.value;">
+						<option class="" value="">SELECCIONÁ UNA SUCURSAL</option>
+						<option value="#1">ALTO PALERMO</option>
+					</select>
+				</div>
+
+					<h2 id="1">JUANITA JO | ALTO PALERMO</h2>
+					<p>Lúnes a Sábado de 9 a 21 hs., Domingo de 11 a 20 hs.</p>
+					<p>Av. Santa Fé 3243, CABA CP 1091 - Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitaaltopalermo@jjo.com.ar">juanitaaltopalermo@jjo.com.ar</a></p>
+					<a class="" href="tel:541148247470"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 4824-7470</a>
+
+					<h2 id="2">JUANITA JO | BARRIO NORTE</h2>
+					<p>Lúnes a Viernes de 9 a 20 hs., Sábado de 10 a 20 hs.</p>
+					<p>Av. Santa Fé 1619, CABA CP 1060 - Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitabnorte@jjo.com.ar">juanitabnorte@jjo.com.ar</a></p>
+					<a class="" href="tel:541145008195"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 4500-8195</a>
+
+					<h2 id="3">JUANITA JO | CABALLITO</h2>
+					<p>Lúnes a Viernes de 9 a 20 hs., Sábados de 10 a 20 hs.</p>
+					<p>Avenida Rivadavia 5002, CABA CP 1424 - Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitacaballito@jjo.com.ar">juanitacaballito@jjo.com.ar</a></p>
+					<a class="" href="tel:541149023156"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 4902-3156</a>
+
+					<h2 id="4">JUANITA JO | CARILÓ</h2>
+					<p>Todos los días de 10:30 a 13 hs. y de 16 a 21:30 hs. Abril: de Viernes a Domingo exclusivamente.</p>
+					<p>Boyero 1498, Cariló CP 7169 - Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitacarilo@jjo.com.ar">juanitacarilo@jjo.com.ar</a></p>
+					<a class="" href="tel:542254579251"><i class="fa fa-phone" aria-hidden="true"></i> +54 2254 57-9251</a>
+
+					<h2 id="5">JUANITA JO | EL SOLAR SHOPPING</h2>
+					<p>Lúnes a Domingo de 10 a 22 hs.</p>
+					<p>Av. Luis María Campos y Gorostiaga (Local 105, Planta Baja), CABA CP 1426 - Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitasolar@jjo.com.ar">juanitasolar@jjo.com.ar</a></p>
+					<a class="" href="tel:541147785070"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 4778-5070</a>
+
+					<h2 id="6">JUANITA JO | GALERÍAS PACÍFICO</h2>
+					<p>Lúnes a Domingo de 10 a 21 hs.</p>
+					<p>Florida 737 (Local 249A), CABA CP 1005 - Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitapacifico@jjo.com.ar">juanitapacifico@jjo.com.ar</a></p>
+					<a class="" href="tel:541150321592"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 5032-1592</a>
+
+					<h2 id="7">JUANITA JO | LA PLATA</h2>
+					<p>Lúnes a Sábado de 9 a 20hs.</p>
+					<p>Calle 9 N° 740, La Plata CP 1111 - Gran Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitaplata@jjo.com.ar">juanitaplata@jjo.com.ar</a></p>
+					<a class="" href="tel:542214896301"><i class="fa fa-phone" aria-hidden="true"></i> +54 221 489-6301</a>
+
+					<h2 id="8">JUANITA JO | LOMAS DE ZAMORA</h2>
+					<p>Lúnes a Sábado de 9 a 20 hs.</p>
+					<p>España 406, Lomas de Zamora CP 1832 - Gran Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitalomas@jjo.com.ar">juanitalomas@jjo.com.ar</a></p>
+					<a class="" href="tel:541142431286"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 4243-1286</a>
+
+					<h2 id="9">JUANITA JO | MAR DEL PLATA</h2>
+					<p>Lúnes a Domingo de 10 a 21 hs.</p>
+					<p>Sarmiento 2685 PB (Local 138), Mar Del Plata CP 7600 - Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitamdq@jjo.com.ar">juanitamdq@jjo.com.ar</a></p>
+					<a class="" href="tel:542234519446"><i class="fa fa-phone" aria-hidden="true"></i> +54 223 451-9446</a>
+
+					<h2 id="10">JUANITA JO | MARTINEZ</h2>
+					<p>Lúnes a Viernes de 9 a 20 hs., Sábados de 9 a 20 hs.</p>
+					<p>Ladislao Martínez 100, Martínez CP 1640 - Gran Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitamartinez@jjo.com.ar">juanitamartinez@jjo.com.ar</a></p>
+					<a class="" href="tel:541147933244"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 4793-3244</a>
+
+					<h2 id="11">JUANITA JO | NEUQUÉN</h2>
+					<p>Lúnes a Viernes de 9 a 13 hs. y de 16:30 a 20:30 hs., Sábado de 9:30 a 13:15 hs. y de 17 a 20:30 hs.</p>
+					<p>Juan Bautista Alberdi 194, Neuquén CP 8300 - Neuquén, Argentina</p>
+					<p><a class="" href="mailto:juanitaneuquen@jjo.com.ar">juanitaneuquen@jjo.com.ar</a></p>
+					<a class="" href="tel:542994422790"><i class="fa fa-phone" aria-hidden="true"></i> +54 299 442-2790</a>
+
+					<h2 id="12">JUANITA JO | PALERMO SOHO</h2>
+					<p>Lúnes a Sábado de 11 a 20 hs., Domingo de 12 a 20 hs.</p>
+					<p>Armenia 1751, CABA CP 1414 - Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitapalermo@jjo.com.ar">juanitapalermo@jjo.com.ar</a></p>
+					<a class="" href="tel:541148310232"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 4831-0232</a>
+
+					<h2 id="13">JUANITA JO | QUILMES</h2>
+					<p>Lúnes a Sábado de 9 a 20hs.</p>
+					<p>Almirante Brown 510, Quilmes CP 1878 - Gran Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitaquilmes@jjo.com.ar">juanitaquilmes@jjo.com.ar</a></p>
+					<a class="" href="tel:541142244595"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 4224-4595</a>
+
+					<h2 id="14">JUANITA JO | RECOLETA (OUTLET)</h2>
+					<p>Lúnes a Viernes de 9 a 20 hs.</p>
+					<p>Uruguay 917, CABA CP 1015 - Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitarecoleta@jjo.com.ar">juanitarecoleta@jjo.com.ar</a></p>
+					<a class="" href="tel:541148117983"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 4811-7983</a>
+
+					<h2 id="15">JUANITA JO | ROSARIO</h2>
+					<p>Lúnes a Domingo de 10 a 22 hs.</p>
+					<p>Junin 501, Rosario CP 2013 - Santa Fé, Argentina</p>
+					<p><a class="" href="mailto:juanitarosario@jjo.com.ar">juanitarosario@jjo.com.ar</a></p>
+					<a class="" href="tel:5403414106544"><i class="fa fa-phone" aria-hidden="true"></i> +54 03414106544</a>
+
+					<h2 id="16">JUANITA JO | SAN TELMO (VINTAGE)</h2>
+					<p>Lúnes a Viernes de 11 a 20 hs., Sábado y Domingo de 10 a 20hs.</p>
+					<p>Defensa 1002, CABA CP 1065 - Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitatelmo@jjo.com.ar">juanitatelmo@jjo.com.ar</a></p>
+					<a class="" href="tel:541143077990"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 4307-7990</a>
+
+					<h2 id="17">JUANITA JO | TUCUMÁN</h2>
+					<p>De Lúnes a Sábado 9 a 13 hs. y de 17 a 21 hs.</p>
+					<p>25 de Mayo 377, San Miguel de Tucumán CP 4000 - Tucumán, Argentina</p>
+					<p><a class="" href="mailto:juanitatucuman@jjo.com.ar">juanitatucuman@jjo.com.ar</a></p>
+					<a class="" href="tel:543814312222"><i class="fa fa-phone" aria-hidden="true"></i> +54 381 431-2222</a>
+
+					<h2 id="18">JUANITA JO | UNICENTER</h2>
+					<p>Lúnes a Domingo de 10 a 22 hs.</p>
+					<p>Paraná 3745 (Local 1135), Martínez CP 1640 - Gran Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitaunicenter@jjo.com.ar">juanitaunicenter@jjo.com.ar</a></p>
+					<a class="" href="tel:541147185883"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 4718-5883</a>
+
+					<h2 id="19">JUANITA JO | VILLA CRESPO (OUTLET)</h2>
+					<p>Lúnes a Sábado de 10 a 20 hs., Domingos de 12 a 19 hs.</p>
+					<p>Gurruchaga 821, CABA CP 1414 - Buenos aires, Argentina</p>
+					<p><a class="" href="mailto:juanitacrespo@jjo.com.ar">juanitacrespo@jjo.com.ar</a></p>
+					<a class="" href="tel:541147772540"><i class="fa fa-phone" aria-hidden="true"></i> +54 11 4777-2540</a>
+
+					<h2 id="20">JUANITA JO | BARRASHOPPING (BRASIL)</h2>
+					<p>Segunda-feira a Sábado: 10 às 22 hs., Domingos: 13 às 21 hs., Feriados: 15 às 21 hs.</p>
+					<p>Avenida das Américas 4666 (Loja 134C), Barra da Tijuca ZIP 22640-102 - Río de Janeiro, Brasil</p>
+					<p><a class="" href="mailto:juanitario@jjo.com.br">juanitario@jjo.com.br</a></p>
+					<a class="" href="tel:552124083157"><i class="fa fa-phone" aria-hidden="true"></i> +55 21 2408-3157</a>
+
+					<h2 id="21">JUANITA JO | SHOPPING RIOSUL (BRASIL)</h2>
+					<p>Segunda-feira a Sábado: 10 às 22 hs., Domingos e Feriados: 15 às 21 hs.</p>
+					<p>Rua Lauro Müller 116, (Loja 201- B02), Botafogo ZIP 22290-160 - Río de Janeiro, Brasil</p>
+					<p><a class="" href="mailto:juanitabotafogo@jjo.com.br">juanitabotafogo@jjo.com.br</a></p>
+
+				</section>
+			</main>
+
+<footer>
+			<div class="footerIconitosBellos">
+				<div class="footercontengoIconitosBellos">
+					<div class="contengoIconitoFooter">
+						<img src="img/footer1.jpg" alt="Envío a domicilio a todo el país">
+						<p class="pIconitos">
+							<span>ENVÍOS A TODO EL PAÍS</span>
+						</p>
+					</div>
+					<div class="contengoIconitoFooter">
+						<img src="img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
+						<p class="pIconitos">
+							<span><a href="contact.html#sucursales">ENCONTRÁ NUESTRAS TIENDAS</a></span>
+						</p>
+					</div>
+					<div class="contengoIconitoFooter">
+						<img src="img/footer3.jpg" alt="Formá parte de Juanita Jo">
+						<p class="pIconitos">
+							<span>FORMÁ PARTE DE JUANITA JO</span>
+						</p>
+					</div>
+					<div class="contengoIconitoFooter">
+						<img src="img/footer4.jpg" alt="Contacto Mayoristas">
+						<p class="pIconitos">
+							<span>CONTACTO PARA MAYORISTAS</span>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="contengoTodoLoDemásDelFooter">
+
+				<div class="footerSeguinos">
+					<div class="contengoFooterSeguinos">
+
+						<h3>GRACIAS POR VISITARNOS</h3>
+						<h4>REDES SOCIALES</h4>
+						<nav>
+							<a href="https://www.facebook.com/juanitajofan"><i
+								class="fab fa-facebook"></i></a> <a
+								href="https://www.instagram.com/juanitajooficial"><i
+								class="fab fa-instagram"></i></a> <a
+								href="https://twitter.com/juanitajook"><i
+								class="fab fa-twitter"></i></a> <a
+								href="https://api.whatsapp.com/send?phone=541128862455"><i
+								class="fab fa-whatsapp"></i></a>
+						</nav>
+						<a href="perfilCliente.html#suscribite">Suscribite a nuestro
+							Newsletter</a>
+						<form class="suscribiteMini"
+							action="perfilCliente.html#suscribite" method="post">
+							<input class="inputEmailSus" type="email" name="email" value=""
+								placeholder="tumail@mail.com" required>
+							<button class="botonSuscribir" type="submit">Enviar</button>
+							</p>
+							<p class="pSuscribir">
+								<span class="errorEmailSus"></span>
+							</p>
+						</form>
+					</div>
+
+				</div>
+
+
+				<div class="footerMapaDelSitio">
+					<div class="contengoFooterMapaDelSitio">
+
+						<ul>
+						<h3>MAPA DEL SITIO</h3>
+							<li><a th:href="@{http://localhost:50/home.html}"> HOME</a></li>
+							<li><a th:href="@{http://localhost:50/faq.html}"> FAQ</a></li>
+							<li><a th:href="@{http://localhost:50/registroClientes/add}"> REGISTRATE</a></li>
+							<li><a th:href="@{http://localhost:50/login.html}"> LOGIN</a></li>
+							<li><a th:href="@{http://localhost:50/contact.html}"> CONTACTO</a></li>
+							<li><a th:href="@{http://localhost:50/perfilCliente.html}"> MI PERFIL</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footerInfo">
+					<div class="contengoFooterInfo">
+						<p>Juanita Jo es una marca registrada, © 2019.</p>
+						<p>
+							<a th:href="@{https://juanitajo.com}">https://juanitajo.com</a>
+						<p>Diseño y desarrollo por TUVI!</p>
+					</div>
+				</div>
+		</footer>
+			</div>
+		</div>
+
+			<script>
+
+	/*		fetch("https://jsonstorage.net/api/items/ac403f2d-a071-402f-9308-139c1e14d04d")
+			.then(function(respuesta){
+					return respuesta.json();
+			})
+			.then(function(data){
+					var traemeSucursal = document.querySelector("select");
+							traemeSucursal.innerHTML = "";
+							data.provincias.sort();
+					for (var i=0;i < data.provincias.length;i++){
+
+						traemeSucursal.innerHTML = traemeSucursal.innerHTML +"<option value='"+datos.provincias[i].nombre+"'>"+datos.provincias[i].id+"</option>";
+			}
+			})
+			.catch(function(error){
+			 console.log(error);
+		 });
+
+JSON de SUCURSALES:
+{"sucursales":[{"nombre":"SELECCIONÁ UNA SUCURSAL","id":"0"},{"nombre":"ALTO PALERMO","id":"1"},{"nombre":"BARRIO NORTE","id":"2"},{"nombre":"CABALLITO","id":"3"},{"nombre":"CARILÓ","id":"4"},{"nombre":"EL SOLAR SHOPPING","id":"5"}
+,{"nombre":"GALERÍAS PACÍFICO","id":"6"},{"nombre":"LA PLATA","id":"7"},{"nombre":"LOMAS DE ZAMORA","id":"8"},{"nombre":"MAR DEL PLATA","id":"9"},{"nombre":"MARTINEZ","id":"10"}
+,{"nombre":"NEUQUÉN","id":"11"},{"nombre":"PALERMO SOHO","id":"12"},{"nombre":"QUILMES","id":"13"},{"nombre":"RECOLETA (OUTLET)","id":"14"},{"nombre":"ROSARIO","id":"15"}
+,{"nombre":"SAN TELMO (VINTAGE)","id":"16"},{"nombre":"TUCUMÁN","id":"17"},{"nombre":"UNICENTER","id":"18"},{"nombre":"VILLA CRESPO (OUTLET)","id":"19"},{"nombre":"BARRASHOPPING (BRASIL)","id":"20"}
+,{"nombre":"SHOPPING RIOSUL (BRASIL)","id":"21"}],"total":"22","cantidad":"22","parametros":{},"inicio":"0"}
+
+		 */
+
+
+		 fetch("https://apis.datos.gob.ar/georef/api/provincias")
+		 .then(function(respuesta){
+		 		return respuesta.json();
+
+		 })
+		 .then(function(data){
+		 		var capturameProvincia = document.querySelector("select");
+		 				capturameProvincia.innerHTML = "";
+		 			//	data.provincias.sort();
+		 		for (var i=0;i < data.provincias.length;i++){
+
+		 				capturameProvincia.innerHTML = capturameProvincia.innerHTML + "<option>"+data.provincias[i].nombre+" - ID:"+data.provincias[i].id+"</option>";
+		 }
+		 capturameProvincia.style.fontSize = "2em";
+		 capturameProvincia.style.fontFamily = "Oswald";
+		 capturameProvincia.style.textTransform = "uppercase";
+		 capturameProvincia.style.width = "100%";
+
+
+		 })
+		 .catch(function(error){
+		  console.log(error);
+		 });
+
+
+			window.addEventListener("load", function(){
+
+			var botSuscribir = document.querySelector("button.botonSuscribir");
+
+				botSuscribir.addEventListener('click',function(evento){
+					var email = document.querySelector("input.inputEmailSus");
+					var errorEmail = document.querySelector("span.errorEmailSus");
+					var regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+
+					if(regexEmail.test(email.value)){
+						errorEmail.innerHTML = "";
+						email.style.border = "1px solid grey";
+						errorEmail.style.color = "green";
+						posiblesErrores = false;
+						if (checkBoxR.checked == true){
+							var rememberEmail = email.value;
+						}
+					} else if (email.value == ""){
+						evento.preventDefault();
+						errorEmail.innerHTML = "Tu email es <strong>obligatorio</strong>.";
+						email.style.border = "1px solid red";
+						errorEmail.style.color = "red";
+						posiblesErrores = true;
+					} else {
+						evento.preventDefault();
+						errorEmail.innerHTML = "Tu email <strong>no</strong> es válido.";
+						email.style.border = "1px solid red";
+						errorEmail.style.color = "red";
+						posiblesErrores = true;
+					}
+				});
+			});
+			</script>
+		</body>
+</html>

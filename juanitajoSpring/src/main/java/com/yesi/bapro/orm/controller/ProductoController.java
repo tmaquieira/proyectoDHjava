@@ -13,28 +13,27 @@ import com.yesi.bapro.orm.model.Productos;
 import com.yesi.bapro.orm.repository.ProductosJpaRepository;
 
 @Controller
-@RequestMapping("registroProd")
-
+@RequestMapping
 public class ProductoController {
 	@Autowired
 	ProductosJpaRepository productosJpaRepository;
-	
-	@GetMapping("add")
-    public String agregarProducto() {
-		return ("registroProd");
+
+	@GetMapping("registroProductos/add")
+	public String agregarProducto() {
+		return ("registroProductos");
 	}
-	
-	@PostMapping("add")
-	public String insertarProducto ( Productos producto) {
+
+	@PostMapping("registroProductos/add")
+	public String insertarProducto(Productos producto) {
 		productosJpaRepository.save(producto);
+		return "registroProductosOk";
+	}
+
+	@GetMapping("registroProductos/all")
+	public String allProductos(Model model) {
+		List<Productos> productoList = productosJpaRepository.findAll();
+		model.addAttribute("listaDeProductos", productoList);
 		return "listProductos";
 	}
-	
-	@GetMapping("all")
-	public String allProductos(Model model) {
-	List<Productos> productoList = productosJpaRepository.findAll();
-	model.addAttribute("listaDeProductos", productoList);
-	return "listaProd";
-	}
-	
-	}
+
+}
