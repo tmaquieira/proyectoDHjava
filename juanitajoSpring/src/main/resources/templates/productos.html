@@ -15,6 +15,8 @@
 
 <body>
 <div class="contengoTodo">
+
+<h2 th:if="${mensaje != null}" th:text="${mensaje}"></h2>
 		<header>
 			<div class="contenedorLogin">
 				<a class="linkLoginMenu" th:href="@{http://localhost:50/home.html}">INICIAR SESIÓN</a>
@@ -23,7 +25,7 @@
 		<a th:href="@{http://localhost:50/home.html}"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
 			<div class="contenedorMenu">
           <nav>
-          <a th:href="@{http://localhost:50/registroClientes/add}">CLIENTES</a><a th:href="@{http://localhost:50/registroProductos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+          <a th:href="@{http://localhost:50/registroClientes/add}">CLIENTES</a><a th:href="@{http://localhost:50/productos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
           </nav>
 			</div>
 		</header>
@@ -48,6 +50,14 @@
 				<td th:text="${unProducto.precio}"></td>
 				<td th:text="${unProducto.color}"></td>
 				<td th:text="${unProducto.stock}"></td>
+				<td th:text="${(unProducto.categoria != null ? unProducto.categoria.nombre : 'No tiene')}"></td>
+								
+				<td><a th:href="@{'/productos/edit/'+${unProducto.id}}">img editar</a></td>
+							
+			<td><form class="" method="POST" th:action="@{'/productos/delete/'+${unProducto.id}}">
+			<button class="botonRegistrar" type="submit" name="borrarProd" value="borrarProd">img borrar</button>
+			</form></td>
+				
 		</tbody>
 	</table>
 
@@ -127,7 +137,6 @@
 					</div>
 
 				</div>
-
 
 				<div class="footerMapaDelSitio">
 					<div class="contengoFooterMapaDelSitio">

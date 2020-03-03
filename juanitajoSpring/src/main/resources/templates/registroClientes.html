@@ -18,7 +18,7 @@
 			<a th:href="@{http://localhost:50/home.html}"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
 			<div class="contenedorMenu">
           <nav>
-          <a th:href="@{http://localhost:50/registroClientes/add}">CLIENTES</a><a th:href="@{http://localhost:50/registroProductos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+          <a th:href="@{http://localhost:50/registroClientes/add}">CLIENTES</a><a th:href="@{http://localhost:50/productos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
           </nav>
 			</div>
 		</header>
@@ -40,9 +40,10 @@
 						</h2>
 						<h3>Datos Personales</h3>
 						<p>
-						<label for="nombre"> Nombres </label> 
-						<input th:field="*{nombre}" id="nombre" type="text" placeholder="Ingresá tus nombres" required>  <!--data-tip="tu vieja", name="nombre"--> 
+					 	<label for="nombre"> Nombres </label> 
+						<input th:field="*{nombre}" id="nombre" type="text" placeholder="Ingresá tus nombres" required>  
 						<span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" style="color: red; font-size: .8em;" class="errorNombre"></span>
+						
 						</p>
 
 						<p>

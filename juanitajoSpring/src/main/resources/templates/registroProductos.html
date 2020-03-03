@@ -20,7 +20,7 @@
 		<a th:href="@{http://localhost:50/home.html}"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
 			<div class="contenedorMenu">
           <nav>
-          <a th:href="@{http://localhost:50/registroClientes/add}">CLIENTES</a><a th:href="@{http://localhost:50/registroProductos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+          <a th:href="@{http://localhost:50/registroClientes/add}">CLIENTES</a><a th:href="@{http://localhost:50/productos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
           </nav>
 			</div>
 		</header>
@@ -32,34 +32,46 @@
 			<section class="contieneRegistro">
 
 				<div class="contieneImgRegistro">
-					<img src="/img/imgregistroProd1.jpg" alt="Juanita Jo - Registro">
+					<img src="/img/imgregistroProd1a.jpg" alt="Juanita Jo - Registro">
 				</div>
 
 				<div class="contieneFormRegistro">
-					<form class="formRegistro" method="POST">
+					<form class="formRegistro" method="POST" th:object="${productos}">
 				<!--  	action="clientProfile.html"-->
 						<h3>Detalle del Producto</h3>
-						<p>
-							<label for="nombre"> Nombre </label> 
-							<input data-tip="tu vieja"
-								id="nombre" type="text" name="nombre" required>
+						<p>								
+					<label for="nombre"> Nombre </label> 
+						<input th:field="*{nombre}" id="nombre" type="text" placeholder="Ingresá nombre" required>   
+						<span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" style="color: red; font-size: .8em;" class="errorNombre"></span>
+						</p>
 						<p>
 							<label for="descripcion"> Descripción </label> 
-							<input
-								id="descripcion" type="text" name="descripcion" required>
+							<input th:field="*{descripcion}" id="descripcion" type="text" placeholder="Ingresá descripción" required>   
+							<span th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}" style="color: red; font-size: .8em;" class="errorNombre"></span>
+						</p>
 						<p>
 							<label for="precio"> Precio (Dos decimales con punto. Ej.: 1200.50)</label> 
-							<input
-								id="precio" step="0.10" type="number" name="precio" required>
-							<!-- <span style="color:red;font-size:.8em;" class="errorNacimiento"></span></p> -->
+							<input th:field="*{precio}" id="precio" type="number" step="0.10" placeholder="Ingresá precio" required>   
+							<span th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}" style="color: red; font-size: .8em;" class="errorNombre"></span>
+						</p>
 						<p>
 							<label for="color"> Color (En minúsculas)</label> 
-							<input
-								id="color" type="text" name="color" required>
+							<input th:field="*{color}" id="color" type="text" placeholder="Ingresá color" required>   
+							<span th:if="${#fields.hasErrors('color')}" th:errors="*{color}" style="color: red; font-size: .8em;" class="errorNombre"></span>
+							
+						</p>
 						<p>
-							<label for="cantidad"> Stock (En números) </label> 
-							<input
-								id="cantidad" type="number" name="stock" required>
+							<label for="stock"> Stock (En números) </label> 
+							<input th:field="*{stock}" id="stock" type="number" placeholder="Ingresá cantidad" required> 
+							<span th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}" style="color: red; font-size: .8em;" class="errorNombre"></span>
+							  
+						</p>
+						<p>
+							<label for="categoria"> Categoría </label>
+							<select name="categoria">
+							<option th:field="*{categoria}" id="categoria" th:each="categoria:${categorias}" th:text="${categoria.nombre}" th:value="${categoria.id}"></option> 
+							</select>
+						</p>
 						<p>
 							<button class="botonRegistrar" type="submit" name="guardar"
 								value="enviar">Enviar</button>

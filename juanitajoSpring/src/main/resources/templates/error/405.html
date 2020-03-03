@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link href="fontawesome/css/all.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Oswald|Montserrat&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/estiloGlobal.css">
+<link rel="stylesheet" href="../css/estiloGlobal.css">
 <title>Juanita Jo | E-Commerce</title>
 </head>
 
@@ -20,18 +20,14 @@
 		<a th:href="@{http://localhost:50/home.html}"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
 			<div class="contenedorMenu">
           <nav>
-          <a th:href="@{http://localhost:50/registroClientes/add}">CLIENTES</a><a th:href="@{http://localhost:50/productos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+          <a th:href="@{http://localhost:50/registroClientes/add}">CLIENTES</a><a th:href="@{http://localhost:50/registroProductos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
           </nav>
 			</div>
 		</header>
 
-		<div class="carrousel">
-			<!--segun la org del sitio, despues de las categorias vine el carrousel (para usarlo necesito JS)  height="500px"     -->
-			<img class="carrouselLoco" src="img/carrousel1.jpg"
-				alt="Juanita Jo - Imágen Publicitaria">
-		</div>
-	<main class="contenedorProductos">	
-	<a th:href="@{http://localhost:50/productos/all}">VER TODOS LOS PRODUCTOS</a>
+	<main class="contenedorProductos" align="center">	
+	<img class="" src="../img/error.png" alt="Hola soy una imágen de error.">
+	<h2>Lo siento, Método No Permitido. (ERROR 405)</h2>
 	</main>
 		<!-- 
 		<main class="contenedorProductos">
@@ -138,25 +134,25 @@
 			<div class="footerIconitosBellos">
 				<div class="footercontengoIconitosBellos">
 					<div class="contengoIconitoFooter">
-						<img src="img/footer1.jpg" alt="Envío a domicilio a todo el país">
+						<img src="../img/footer1.jpg" alt="Envío a domicilio a todo el país">
 						<p class="pIconitos">
 							<span>ENVÍOS A TODO EL PAÍS</span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
+						<img src="../img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
 						<p class="pIconitos">
 							<span><a href="contact.html#sucursales">ENCONTRÁ NUESTRAS TIENDAS</a></span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="img/footer3.jpg" alt="Formá parte de Juanita Jo">
+						<img src="../img/footer3.jpg" alt="Formá parte de Juanita Jo">
 						<p class="pIconitos">
 							<span>FORMÁ PARTE DE JUANITA JO</span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="img/footer4.jpg" alt="Contacto Mayoristas">
+						<img src="../img/footer4.jpg" alt="Contacto Mayoristas">
 						<p class="pIconitos">
 							<span>CONTACTO PARA MAYORISTAS</span>
 						</p>
