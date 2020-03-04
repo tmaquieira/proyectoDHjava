@@ -39,38 +39,42 @@
 					<form class="formRegistro" method="POST" th:object="${productos}">
 				<!--  	action="clientProfile.html"-->
 						<h3>Detalle del Producto</h3>
+							<p>
+						<label for="categoria"> Categoría </label>
+							<select name="categoria" id="categoria">
+							<option th:field="*{categoria}" th:each="categoria:${categorias}" th:text="${categoria.nombre}" th:value="${categoria.id}"></option> 
+							</select>
+						</p>
 						<p>								
-					<label for="nombre"> Nombre </label> 
-						<input th:field="*{nombre}" id="nombre" type="text" placeholder="Ingresá nombre" required>   
+						<label for="nombre"> Nombre </label> 
+						<input th:field="*{nombre}" id="nombre" type="text" placeholder="Por Ej., Cartera Bianca" required>   
 						<span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" style="color: red; font-size: .8em;" class="errorNombre"></span>
 						</p>
 						<p>
 							<label for="descripcion"> Descripción </label> 
-							<input th:field="*{descripcion}" id="descripcion" type="text" placeholder="Ingresá descripción" required>   
+							<input th:field="*{descripcion}" id="descripcion" type="text" placeholder="Detalles del producto" required>   
 							<span th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}" style="color: red; font-size: .8em;" class="errorNombre"></span>
 						</p>
+						
+						<p><label for="fotoProd"> Foto del Producto (Nombre + extensión de achivo.)</label>
+						<input th:field="*{fotoProd}" name="fotoProd" type="text" placeholder="Por Ej.: billetera1a.jpg" required>   
+						<span th:if="${#fields.hasErrors('fotoProd')}" th:errors="*{fotoProd}" style="color: red; font-size: .8em;" class="errorNombre"></span>
+						</p>
+							<p>
+							<label for="color"> Color </label> 
+							<select name="color" id="color">
+							<option th:field="*{color}" th:each="color:${colores}" th:text="${color.nombre}" th:value="${color.id}"></option> 
+							</select>	
+						</p>
 						<p>
-							<label for="precio"> Precio (Dos decimales con punto. Ej.: 1200.50)</label> 
-							<input th:field="*{precio}" id="precio" type="number" step="0.10" placeholder="Ingresá precio" required>   
+							<label for="precio"> Precio (2 decimales con punto.)</label> 
+							<input th:field="*{precio}" id="precio" type="number" step="0.10" placeholder="Ej.: 1200.5" required>   
 							<span th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}" style="color: red; font-size: .8em;" class="errorNombre"></span>
 						</p>
 						<p>
-							<label for="color"> Color (En minúsculas)</label> 
-							<input th:field="*{color}" id="color" type="text" placeholder="Ingresá color" required>   
-							<span th:if="${#fields.hasErrors('color')}" th:errors="*{color}" style="color: red; font-size: .8em;" class="errorNombre"></span>
-							
-						</p>
-						<p>
 							<label for="stock"> Stock (En números) </label> 
-							<input th:field="*{stock}" id="stock" type="number" placeholder="Ingresá cantidad" required> 
+							<input th:field="*{stock}" id="stock" type="number" placeholder="Cantidad disponible" required> 
 							<span th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}" style="color: red; font-size: .8em;" class="errorNombre"></span>
-							  
-						</p>
-						<p>
-							<label for="categoria"> Categoría </label>
-							<select name="categoria" id="categoria">
-							<option th:field="*{categoria}" th:each="categoria:${categorias}" th:text="${categoria.nombre}" th:value="${categoria.id}"></option> 
-							</select>
 						</p>
 						<p>
 							<button class="botonRegistrar" type="submit" name="guardar"

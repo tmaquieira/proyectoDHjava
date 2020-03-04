@@ -34,7 +34,7 @@
 				</div>
 
 				<div class="contieneFormRegistro">
-					<form class="formRegistro" method="POST" th:action="@{/registroClientes/add}" th:object="${usuario}"> <!--  solo se aclara action si se debe redirigir a otro sitio.-->
+					<form class="formRegistro" method="POST" th:action="@{/usuarios/all}" th:object="${usuario}"> <!--  solo se aclara action si se debe redirigir a otro sitio.-->
 						<h2>
 						<a th:href="@{http://localhost:50/login.html}">¿Ya tenés cuenta? ¡Iniciá Sesión!</a>
 						</h2>

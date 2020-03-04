@@ -37,7 +37,7 @@ public class UsuarioController {
 			return "registroClientes";
 		}
 		usuarioJpaRepository.save(usuario);
-		return "perfilCliente";
+		return "redirect:/usuarios/all";
 	}
 
 	@GetMapping("/all")

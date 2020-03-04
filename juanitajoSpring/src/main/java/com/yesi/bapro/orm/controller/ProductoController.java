@@ -20,6 +20,7 @@ import com.yesi.bapro.orm.model.Categoria;
 import com.yesi.bapro.orm.model.Productos;
 import com.yesi.bapro.orm.model.Usuario;
 import com.yesi.bapro.orm.repository.CategoriaJpaRepository;
+import com.yesi.bapro.orm.repository.ColorJpaRepository;
 import com.yesi.bapro.orm.repository.ProductosJpaRepository;
 
 @Controller
@@ -29,10 +30,13 @@ public class ProductoController {
 	ProductosJpaRepository productosJpaRepository;
 	@Autowired
 	CategoriaJpaRepository categoriaJpaRepository;
+	@Autowired
+	ColorJpaRepository colorJpaRepository;
 
 	@GetMapping("/add")
 	public String agregarProducto(Productos producto, Model model) {
 		model.addAttribute("categorias", this.categoriaJpaRepository.findAll());
+		model.addAttribute("colores", this.colorJpaRepository.findAll());
 		return "registroProductos";
 	}
 
@@ -56,12 +60,23 @@ public class ProductoController {
 		return "productos";
 	}
 	
-	/*
-	@GetMapping("registroProductos/edit/{id}")
-	public String editarProducto() {
+
+	@GetMapping("/edit/{id}")
+	public String editarProducto(@PathVariable("id") Productos prod, Model model) {
+		model.addAttribute("productos", prod);
 		return ("registroProductos");
 	}
-	*/
+	
+	@PostMapping("/edit/{id}")
+	public String editadoProducto(@Valid Productos producto, BindingResult bindingResult, RedirectAttributes redirAtt) {
+		if(bindingResult.hasErrors()) {
+			return "registroProductos";
+		}
+		productosJpaRepository.save(producto);
+		redirAtt.addFlashAttribute("mensaje", "Producto editado Exitosamente :)");
+		return "redirect:/productos/all";
+	}
+
 	@PostMapping(value="/delete/{id}")
 	public String deleteProductos (@PathVariable ("id") Integer id) {
 		productosJpaRepository.deleteById(id);

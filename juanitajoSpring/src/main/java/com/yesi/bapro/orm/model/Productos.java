@@ -25,21 +25,22 @@ public class Productos {
 	private String descripcion;
 	@NotNull(message="El precio no puede ser nulo")
 	private Double precio;
-	@NotEmpty(message="El color no puede estar vacío")
-	@Size(min=3, max=12, message="El color debe contener entre 3 y 12 caracteres")
-	@Pattern(message="El color se describe con letras!!!", regexp = "^[a-zA-Z]+$", flags = Flag.UNICODE_CASE)
-	private String color;
 	@NotNull(message="El stock no puede ser nulo")
 	private Integer stock;
 	@ManyToOne //pertenece a 1 categoria
 	@JoinColumn(name="categoria_id")
 	private Categoria categoria;
-	//private String foto;
+	@ManyToOne //pertenece a 1 categoria
+	@JoinColumn(name="color_id")
+	private Color color;
+	@NotEmpty(message="La ruta de la foto no puede estar vacía")
+	private String fotoProd;
+
 
 	public Productos() {
 	}
 
-	public Productos(Integer id, String nombre, String descripcion, Double precio, String color, Integer stock, Categoria categoria) {//, String foto
+	public Productos(Integer id, String nombre, String descripcion, Double precio, Color color, Integer stock, Categoria categoria, String fotoProd) { 
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -48,7 +49,7 @@ public class Productos {
 		this.color = color;
 		this.stock = stock;
 		this.categoria = categoria;
-		//this.foto = foto;
+		this.fotoProd = fotoProd;
 	}
 
 
@@ -84,11 +85,11 @@ public class Productos {
 		this.precio = precio;
 	}
 
-	public String getColor() {
+	public Color getColor() {
 		return color;
 	}
 
-	public void setColor(String color) {
+	public void setColor(Color color) {
 		this.color = color;
 	}
 
@@ -106,6 +107,14 @@ public class Productos {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}	
+
+	public String getFotoProd() {
+		return fotoProd;
+	}
+
+	public void setFotoProd(String fotoProd) {
+		this.fotoProd = fotoProd;
 	}
 	
 /*	public String getFoto() {
