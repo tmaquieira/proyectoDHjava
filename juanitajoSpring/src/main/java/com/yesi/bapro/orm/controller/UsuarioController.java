@@ -17,7 +17,7 @@ import com.yesi.bapro.orm.model.Usuario;
 import com.yesi.bapro.orm.repository.UsuarioJpaRepository;
 
 @Controller
-@RequestMapping
+@RequestMapping("usuarios")
 public class UsuarioController {
 	@Autowired
 	UsuarioJpaRepository usuarioJpaRepository;
@@ -26,12 +26,12 @@ public class UsuarioController {
 	//this.movieJpaRepository=movieJpaRepository;
 	//this.CategoriasJpaRepository=categoriasJpaRepository de esa manera conectamos los repositorios necesarios de la base de datos}
 
-	@GetMapping("registroClientes/add")
+	@GetMapping("/add")
 	public String registrarCliente(Usuario usuario) {
 		return "registroClientes";
 	}
 
-	@PostMapping("registroClientes/add")
+	@PostMapping("/add")
 	public String insertarUsuario(@Valid Usuario usuario, BindingResult bindingResult) {
 		if(bindingResult.hasErrors()) {
 			return "registroClientes";
@@ -40,14 +40,14 @@ public class UsuarioController {
 		return "perfilCliente";
 	}
 
-	@GetMapping("registroClientes/all")
+	@GetMapping("/all")
 	public String allUsuarios(Model model) {
 		List<Usuario> usuarioList = usuarioJpaRepository.findAll();
 		model.addAttribute("listaDeUsuarios", usuarioList);
 		return "listClientes";
 	}
 	
-	@DeleteMapping("{id}")
+	@DeleteMapping("/delete/{id}")
 	public String deleteUsuario (@PathVariable ("id") Integer id) {
 		usuarioJpaRepository.deleteById(id);
 		return "redirect:/listClientes/all";

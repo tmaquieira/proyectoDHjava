@@ -7,7 +7,7 @@ import com.yesi.bapro.orm.model.Categoria;
 import com.yesi.bapro.orm.model.Productos;
 
 @Repository
-public interface CategoriasJpaRepository extends JpaRepository <Categoria, Integer> {
+public interface CategoriaJpaRepository extends JpaRepository <Categoria, Integer> {
 
 }
 

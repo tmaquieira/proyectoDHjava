@@ -36,10 +36,8 @@ public class Productos {
 	private Categoria categoria;
 	//private String foto;
 
-
 	public Productos() {
 	}
-
 
 	public Productos(Integer id, String nombre, String descripcion, Double precio, String color, Integer stock, Categoria categoria) {//, String foto
 		super();
@@ -58,56 +56,45 @@ public class Productos {
 		return id;
 	}
 
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 
 	public String getNombre() {
 		return nombre;
 	}
 
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 
 	public String getDescripcion() {
 		return descripcion;
 	}
 
-
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
 
 	public Double getPrecio() {
 		return precio;
 	}
 
-
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
-
 
 	public String getColor() {
 		return color;
 	}
 
-
 	public void setColor(String color) {
 		this.color = color;
 	}
 
-
 	public Integer getStock() {
 		return stock;
 	}
-
 
 	public void setStock(Integer stock) {
 		this.stock = stock;
@@ -117,7 +104,6 @@ public class Productos {
 		return categoria;
 	}
 
-
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
@@ -125,10 +111,7 @@ public class Productos {
 /*	public String getFoto() {
 		return foto;
 	}
-
-
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}*/
-
 }

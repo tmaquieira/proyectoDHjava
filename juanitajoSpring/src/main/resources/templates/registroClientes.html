@@ -18,7 +18,7 @@
 			<a th:href="@{http://localhost:50/home.html}"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
 			<div class="contenedorMenu">
           <nav>
-          <a th:href="@{http://localhost:50/registroClientes/add}">CLIENTES</a><a th:href="@{http://localhost:50/productos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+          <a th:href="@{http://localhost:50/usuarios/add}">CLIENTES</a><a th:href="@{http://localhost:50/productos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
           </nav>
 			</div>
 		</header>
@@ -43,23 +43,17 @@
 					 	<label for="nombre"> Nombres </label> 
 						<input th:field="*{nombre}" id="nombre" type="text" placeholder="Ingresá tus nombres" required>  
 						<span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" style="color: red; font-size: .8em;" class="errorNombre"></span>
-						
 						</p>
-
 						<p>
-							<label for="apellido"> Apellido </label> <input id="apellido"
-								type="text" name="apellido" placeholder="Ingresá tu apellido"
-								required> <span style="color: red; font-size: .8em;"
-								class="errorApellido"></span>
+						<label for="apellido"> Apellido </label> 
+						<input th:field="*{apellido}" id="apellido" type="text" placeholder="Ingresá tus nombres" required>  
+						<span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}" style="color: red; font-size: .8em;" class="errorNombre"></span>
 						</p>
-
 						<p>
-							<label for="nacimiento"> Fecha de nacimiento </label> <input
-								id="nacimiento" type="date" name="fechaDeNacimiento"
-								min="1900-01-01" max="2000-12-31" required> <span
-								style="color: red; font-size: .8em;" class="errorNacimiento"></span>
+						<label for="nacimiento"> Fecha de nacimiento </label> 
+						<input th:field="*{fechaDeNacimiento}" id="fechaDeNacimiento" type="date" placeholder="Ingresá tu Fecha de Nacimiento" min="1900-01-01" max="2000-12-31" required>  
+						<span th:if="${#fields.hasErrors('fechaDeNacimiento')}" th:errors="*{fechaDeNacimiento}" style="color: red; font-size: .8em;" class="errorNombre"></span>
 						</p>
-
 						<p>
 							<label for="nacionalidad"> País de nacimiento </label> <select
 								name="nacionalidad" id="nacionalidad" required>
@@ -69,61 +63,51 @@
 								<option value="bra">Brasil</option>
 								<option value="chi">Chile</option>
 								<option value="uru">Uruguay</option>
-							</select> <span style="color: red; font-size: .8em;"
-								class="errorNacionalidad"></span>
+							</select> 						
+							<span th:if="${#fields.hasErrors('nacionalidad')}" th:errors="*{nacionalidad}" style="color: red; font-size: .8em;" class="errorNombre"></span>
 						</p>
-
 						<p>
-							<label for="dni"> DNI (Sin separadores) </label> <input id="dni"
-								type="number" name="dni" placeholder="11222333" required>
-							<span style="color: red; font-size: .8em;" class="errorDNI"></span>
+						<label for="dni"> DNI (Sin separadores) </label> 
+						<input th:field="*{dni}" id="dni" type="number" placeholder="Ingresá tu DNI" required>  
+						<span th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}" style="color: red; font-size: .8em;" class="errorNombre"></span>
 						</p>
 
 						<h3>Datos de Contacto</h3>
 
 						<p>
-							<label for="domicilio"> Domicilio (Calle y Altura,
-								Localidad y Código Postal, Provincia, País) </label>
+						<label for="domicilio"> Domicilio (Calle y Altura, Localidad y Código Postal, Provincia, País) </label>
 						</p>
 						<p>
-							<input id="domicilio" type="text" name="domicilio"
-								placeholder="Privet Dr. 4 L. Whinging, Surrey SE16, Londres, Inglaterra."
-								required>
+						<input th:field="*{domicilio}" id="domicilio" type="text" placeholder="Privet Dr. 4 L. Whinging, Surrey SE16, Londres, Inglaterra." required>  
+						<span th:if="${#fields.hasErrors('domicilio')}" th:errors="*{domicilio}" style="color: red; font-size: .8em;" class="errorNombre"></span>
 						</p>
-						<span style="color: red; font-size: .8em;" class="errorDomicilio"></span>
-
 						<p>
-							<label for="telefono"> Teléfono Fijo (Código de área +
-								número) </label> <input id="telefono" type="number" name="telFijo"
-								placeholder="541142223333" required> <span
-								style="color: red; font-size: .8em;" class="errorTelefono"></span>
+						<label for="telFijo"> Teléfono Fijo (Código de área + número) </label> 
+						<input th:field="*{telFijo}" id="telFijo" type="number" placeholder="541142223333" required>  
+						<span th:if="${#fields.hasErrors('telFijo')}" th:errors="*{telFijo}" style="color: red; font-size: .8em;" class="errorNombre"></span>
 						</p>
-
 						<p>
-							<label for="telefono2"> Teléfono Celular (Código de área
-								+ número) </label> <input id="telefono2" type="number" name="telCelular"
-								placeholder="5491162223333" required> <span
-								style="color: red; font-size: .8em;" class="errorTelefono2"></span>
+						<label for="telCelular"> Teléfono Celular (Código de área + número) </label> 
+						<input th:field="*{telCelular}" id="telCelular" type="number" placeholder="5491142223333" required>  
+						<span th:if="${#fields.hasErrors('telCelular')}" th:errors="*{telCelular}" style="color: red; font-size: .8em;" class="errorNombre"></span>
 						</p>
 
 						<h3>Creación de Usuario</h3>
 
 						<p>
-							<label for="mail"> Dirección de correo electrónico
-								(e-mail) </label> <input id="mail" type="email" name="mail"
-								placeholder="unmail@unmail.com" required> <span
-								style="color: red; font-size: .8em;" class="errorEmail"></span>
-						</p>
-
-						<p>
-							<label for="contraseña"> Contraseña </label> <input
-								id="contrasena" type="password" name="contrasenia"
-								placeholder=" " required>
+						<label for="mail"> Dirección de correo electrónico (e-mail) </label> 	
+						<input th:field="*{mail}" id="mail" type="email" placeholder="unmail@unmail.com" required>  
+						<span th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}" style="color: red; font-size: .8em;" class="errorNombre"></span>
 						</p>
 						<p>
-							<label for="contraseña"> Confirmar Contraseña </label> <input
-								id="contrasena2" type="password" placeholder=" " required>
-							<span style="color: red; font-size: .8em;" class="errorPassword"></span>
+						<label for="contrasenia"> Contraseña </label> 
+						<input th:field="*{contrasenia}" id="contrasenia" type="password" placeholder=" " required>  
+						<span th:if="${#fields.hasErrors('contrasenia')}" th:errors="*{contrasenia}" style="color: red; font-size: .8em;" class="errorNombre"></span>
+						</p>
+						<p>
+						<label for="contrasenia2"> Confirmar Contraseña </label> 
+						<input th:field="*{contrasenia}" id="contrasenia2" type="password" placeholder=" " required>  
+						<span th:if="${#fields.hasErrors('contrasenia')}" th:errors="*{contrasenia}" style="color: red; font-size: .8em;" class="errorNombre"></span>
 						</p>
 
 						<!--   gregar otros campos requeridos por el der-->
@@ -137,19 +121,15 @@
 							<input id="suscribirmeCheck" type="checkbox" name="sus"
 								value="suscribime"> Dale!
 						<p>
-							<label for="tipoDeSuscripcion">Me interesaría recibir
-								info de...</label> <input type="radio" name="gustos" value="suscarte">
-							Carteras <input type="radio" name="gustos" value="susmochi">
-							Mochilas <input type="radio" name="gustos" value="susbille">
-							Billeteras <input type="radio" name="gustos" value="sustodo">
-							Todo
+							<label for="tipoDeSuscripcion">Me interesaría recibir info de...</label> 
+							<input type="radio" name="gustos" value="suscarte"> Carteras 
+							<input type="radio" name="gustos" value="susmochi"> Mochilas 
+							<input type="radio" name="gustos" value="susbille"> Billeteras 
+							<input type="radio" name="gustos" value="sustodo"> Todo
 						</p>
-
 						<p>
-							<button class="botonRegistrar" type="submit" name="guardar"
-								value="enviar">Enviar</button>
-							<button class="botonBorrar" type="reset" name="borrar"
-								value="borrar">Vaciar</button>
+							<button class="botonRegistrar" type="submit" name="guardar" value="enviar">Enviar</button>
+							<button class="botonBorrar" type="reset" name="borrar" value="borrar">Vaciar</button>
 						</p>
 					</form>
 				</div>
@@ -223,11 +203,12 @@
 				<div class="footerMapaDelSitio">
 					<div class="contengoFooterMapaDelSitio">
 
-						<ul>
+
+		<ul>
 						<h3>MAPA DEL SITIO</h3>
 							<li><a th:href="@{http://localhost:50/home.html}"> HOME</a></li>
 							<li><a th:href="@{http://localhost:50/faq.html}"> FAQ</a></li>
-							<li><a th:href="@{http://localhost:50/registroClientes/add}"> REGISTRATE</a></li>
+							<li><a th:href="@{http://localhost:50/usuarios/add}"> REGISTRATE</a></li>
 							<li><a th:href="@{http://localhost:50/login.html}"> LOGIN</a></li>
 							<li><a th:href="@{http://localhost:50/contact.html}"> CONTACTO</a></li>
 							<li><a th:href="@{http://localhost:50/perfilCliente.html}"> MI PERFIL</a></li>

@@ -36,6 +36,7 @@ public class Usuario {
 	@NotEmpty(message="El DNI no puede estar vacío")
 	private String dni;
 	@NotEmpty(message="El domicilio no puede estar vacío")
+	@Size(min=12, max=120, message="El domicilio debe tener entre 12 y 120 caracteres")
 	private String domicilio;
 	@NotEmpty(message="El teléfono fijo no puede estar vacío")
 	@Size(min=12, max=12, message="El teléfono fijo debe tener 12 caracteres")
@@ -44,8 +45,8 @@ public class Usuario {
 	@Size(min=13, max=13, message="El celular debe tener 13 caracteres")
 	private String telCelular;
 	@NotEmpty(message="El mail no puede estar vacío")
-	@Pattern(message="No coincide con lo esperado", regexp = "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$", flags = Flag.UNICODE_CASE)
-	//@Email
+	//@Pattern(message="No coincide con lo esperado", regexp = "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$", flags = Flag.UNICODE_CASE)
+	@Email(message="No coincide con lo esperado")
 	private String mail;
 	@NotEmpty(message="La contraseña no puede estar vacía")
 	@Pattern(message="No coincide con lo esperado", regexp = "^(?=.*\\d)(?=.*[\\u0021-\\u002b\\u003c-\\u0040])(?=.*[A-Z])(?=.*[a-z])\\S{8,16}$", flags = Flag.UNICODE_CASE)

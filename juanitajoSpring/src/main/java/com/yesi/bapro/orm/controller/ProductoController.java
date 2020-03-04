@@ -16,9 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.yesi.bapro.orm.model.Categoria;
 import com.yesi.bapro.orm.model.Productos;
 import com.yesi.bapro.orm.model.Usuario;
-import com.yesi.bapro.orm.repository.CategoriasJpaRepository;
+import com.yesi.bapro.orm.repository.CategoriaJpaRepository;
 import com.yesi.bapro.orm.repository.ProductosJpaRepository;
 
 @Controller
@@ -27,11 +28,11 @@ public class ProductoController {
 	@Autowired
 	ProductosJpaRepository productosJpaRepository;
 	@Autowired
-	CategoriasJpaRepository categoriasJpaRepository;
+	CategoriaJpaRepository categoriaJpaRepository;
 
 	@GetMapping("/add")
 	public String agregarProducto(Productos producto, Model model) {
-		model.addAttribute("categorias", this.categoriasJpaRepository.findAll());
+		model.addAttribute("categorias", this.categoriaJpaRepository.findAll());
 		return "registroProductos";
 	}
 
@@ -42,6 +43,7 @@ public class ProductoController {
 		if(bindingResult.hasErrors()) {
 			return "registroProductos";
 		}
+		//producto.setCategoria(categoria);
 		productosJpaRepository.save(producto);
 		redirAtt.addFlashAttribute("mensaje", "Producto cargado Exitosamente :)");
 		return "redirect:/productos/all";

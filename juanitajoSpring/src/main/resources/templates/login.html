@@ -17,7 +17,7 @@
 		<a th:href="@{http://localhost:50/home.html}"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
         <div class="contenedorMenu">
           <nav>
-          <a th:href="@{http://localhost:50/registroClientes/add}">CLIENTES</a><a th:href="@{http://localhost:50/productos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+          <a th:href="@{http://localhost:50/usuarios/add}">CLIENTES</a><a th:href="@{http://localhost:50/productos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
           </nav>
                   </div>
       </header>
@@ -33,7 +33,7 @@
 
           <div class="contieneFormLogin">
           <form class="formLogin" action="clientProfile.html" method="post">
-            <h2><a th:href="@{http://localhost:50/registroClientes/add}">¿No tenés cuenta? ¡Registrate!</a></h2>
+            <h2><a th:href="@{http://localhost:50/usuarios/add}">¿No tenés cuenta? ¡Registrate!</a></h2>
             <p><label for="email">E-mail</label>
               <input class="inputEmail" type="email" name="email" value="" placeholder="tumail@mail.com" required> <!--REPASAR LOS VIDEOS DE TIPOS DE RELLENO, DESPLAZAMIENTO Y POR QUÈ SE LE PONE ID A LOS INPUT-->
               <span style="font-size:1em;" class="errorEmail"></span></p>
@@ -118,11 +118,11 @@
 				<div class="footerMapaDelSitio">
 					<div class="contengoFooterMapaDelSitio">
 
-						<ul>
-							<h3>MAPA DEL SITIO</h3>
+					<ul>
+						<h3>MAPA DEL SITIO</h3>
 							<li><a th:href="@{http://localhost:50/home.html}"> HOME</a></li>
 							<li><a th:href="@{http://localhost:50/faq.html}"> FAQ</a></li>
-							<li><a th:href="@{http://localhost:50/registroClientes/add}"> REGISTRATE</a></li>
+							<li><a th:href="@{http://localhost:50/usuarios/add}"> REGISTRATE</a></li>
 							<li><a th:href="@{http://localhost:50/login.html}"> LOGIN</a></li>
 							<li><a th:href="@{http://localhost:50/contact.html}"> CONTACTO</a></li>
 							<li><a th:href="@{http://localhost:50/perfilCliente.html}"> MI PERFIL</a></li>
