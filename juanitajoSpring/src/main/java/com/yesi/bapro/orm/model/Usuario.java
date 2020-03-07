@@ -1,11 +1,17 @@
 package com.yesi.bapro.orm.model;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -51,9 +57,35 @@ public class Usuario {
 	@NotEmpty(message="La contraseña no puede estar vacía")
 	@Pattern(message="No coincide con lo esperado", regexp = "^(?=.*\\d)(?=.*[\\u0021-\\u002b\\u003c-\\u0040])(?=.*[A-Z])(?=.*[a-z])\\S{8,16}$", flags = Flag.UNICODE_CASE)
 	private String contrasenia;
-
+	
+	
+	
+	
+	@JoinTable(
+			name="carrito",
+			joinColumns= @JoinColumn (name= "usuario_id", nullable= false),
+			inverseJoinColumns = @JoinColumn (name= "carrito_id", nullable= false)
+	
+	)
+	
+	
+	@ManyToMany(cascade=CascadeType.ALL)
+	private List<Productos> carrito;
+	
 	public Usuario() {
+		this.carrito = new ArrayList<Productos>();
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public Usuario(Integer id, String nombre, String apellido, Date fechaDeNacimiento, String nacionalidad, String dni,
 			String domicilio, String telFijo, String telCelular, String mail, String contrasenia) {
@@ -158,4 +190,42 @@ public class Usuario {
 	public void setContrasenia(String contrasenia) {
 		this.contrasenia = contrasenia;
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public void addProduct (Productos producto)
+	{
+		if (this.carrito == null) {
+			this.carrito = new ArrayList<>();
+				
+		} this.carrito.add(producto);
+	}
+	
+	public List<Productos> getCarrito(){
+		return this.carrito;
+	}
+
+
+
+
+
+
+
 }
+

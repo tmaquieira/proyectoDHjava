@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="es" dir="ltr" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
@@ -42,10 +42,32 @@
 				<th scope="col">Color</th>
 				<th scope="col">Precio</th>
 				<th scope="col">Stock</th>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<th scope="col">Acciones</th>
+				
+				
+				
+				
+				
+				
+				
+				
+
+				
+				
+				
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="unProducto:${listaDeProductos}">
+			<tr th:each="unProducto:${carrito}"> 
 				<td scope="row" th:text="${(unProducto.categoria != null ? unProducto.categoria.nombre : 'No tiene')}"></td>
 				<td th:text="${unProducto.id}"></td>
 				<td><img th:src="${unProducto.fotoProd != null} ? @{'/img/'+${unProducto.fotoProd}} : @{/img/prodSinFoto.png}" width="200px"/></td>
@@ -61,6 +83,19 @@
 			<td><form class="" method="POST" th:action="@{'/productos/delete/'+${unProducto.id}}">
 			<button class="botonRegistrar" type="submit" name="borrarProd" value="borrarProd"><img src="/img/eraseIcon.png" alt="IMG eliminar"></button>
 			</form></td>
+			
+			
+			
+			
+			<td>
+			<form class="" method="POST" th:action="@{'/carrito/add/'+${unProducto.id}}">
+			<button class="botonAgregar" type="submit" name="agregarProd" value="agregarProd">Agregar al carrito</button>
+			</form>
+			</td>
+			
+			
+			
+			
 				
 		</tbody>
 	</table>
