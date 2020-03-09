@@ -14,10 +14,14 @@
   <div class="contengoTodo">
     <header>
       <div class="contenedorLogoMenu">
-		<a th:href="@{http://localhost:50/home.html}"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
+		<a href="/home"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
         <div class="contenedorMenu">
           <nav>
-          <a th:href="@{http://localhost:50/usuarios/add}">CLIENTES</a><a th:href="@{http://localhost:50/productos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+          <a href="/usuarios/all">CLIENTES</a>
+          <a href="/productos/all">PRODUCTOS</a>
+          <a href="/faq">FAQ</a>
+          <a href="/contact">CONTACTO</a>
+          <a href="/carrito">CARRITO</a>
           </nav>
                   </div>
       </header>
@@ -32,8 +36,8 @@
           </div>
 
           <div class="contieneFormLogin">
-          <form class="formLogin" action="clientProfile.html" method="post">
-            <h2><a th:href="@{http://localhost:50/usuarios/add}">¿No tenés cuenta? ¡Registrate!</a></h2>
+          <form class="formLogin" action="clientProfile" method="post">
+            <h2><a href="/usuarios/add">¿No tenés cuenta? ¡Registrate!</a></h2>
             <p><label for="email">E-mail</label>
               <input class="inputEmail" type="email" name="email" value="" placeholder="tumail@mail.com" required> <!--REPASAR LOS VIDEOS DE TIPOS DE RELLENO, DESPLAZAMIENTO Y POR QUÈ SE LE PONE ID A LOS INPUT-->
               <span style="font-size:1em;" class="errorEmail"></span></p>
@@ -42,7 +46,7 @@
                 <input class="inputPass" type="password" name="pass" value="" placeholder="" required>
                 <span style="font-size:1em;" class="errorPassword"></span></p>
 
-                <a href="home.html"><p>¿Olvidaste la Contraseña?</p></a>
+                <a href="home"><p>¿Olvidaste la Contraseña?</p></a>
                 <p><input id="recordarmeCheck" type="checkbox" name="termsyconds" value="rememberme"> Recordarme </p>
 
                 <p><button class= "botonLoguear" type="submit">Ingresar</button>
@@ -51,7 +55,7 @@
               </div>
               </section>
             </main>
-<footer>
+		<footer>
 			<div class="footerIconitosBellos">
 				<div class="footercontengoIconitosBellos">
 					<div class="contengoIconitoFooter">
@@ -117,15 +121,14 @@
 
 				<div class="footerMapaDelSitio">
 					<div class="contengoFooterMapaDelSitio">
-
-					<ul>
+<ul>
 						<h3>MAPA DEL SITIO</h3>
-							<li><a th:href="@{http://localhost:50/home.html}"> HOME</a></li>
-							<li><a th:href="@{http://localhost:50/faq.html}"> FAQ</a></li>
-							<li><a th:href="@{http://localhost:50/usuarios/add}"> REGISTRATE</a></li>
-							<li><a th:href="@{http://localhost:50/login.html}"> LOGIN</a></li>
-							<li><a th:href="@{http://localhost:50/contact.html}"> CONTACTO</a></li>
-							<li><a th:href="@{http://localhost:50/perfilCliente.html}"> MI PERFIL</a></li>
+							<li><a href="/home"> HOME</a></li>
+							<li><a href="/faq"> FAQ</a></li>
+							<li><a href="/usuarios/add"> REGISTRATE</a></li>
+							<li><a href="/login"> LOGIN</a></li>
+							<li><a href="/contact"> CONTACTO</a></li>
+							<li><a href="/perfilCliente"> MI PERFIL</a></li>
 						</ul>
 					</div>
 				</div>
@@ -134,13 +137,13 @@
 					<div class="contengoFooterInfo">
 						<p>Juanita Jo es una marca registrada, © 2019.</p>
 						<p>
-							<a th:href="@{https://juanitajo.com}">https://juanitajo.com</a>
+							<a href="https://juanitajo.com">https://juanitajo.com</a>
 						<p>Diseño y desarrollo por TUVI!</p>
 					</div>
 				</div>
 		</footer>
             </div>
-          </div>
+          
 
 
               <script>

@@ -9,25 +9,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping
 public class HomeController {
 	
-	@RequestMapping(value={"/", "home", "home.html"}, method=RequestMethod.GET)
+	@RequestMapping(value={"/", "home"}, method=RequestMethod.GET)
 	public String irAHome() {
 		return "home";
 	}
 
-	@GetMapping("faq.html")
+	@RequestMapping(value={"faq"}, method=RequestMethod.GET)
 	public String irAFaq() {
 		return "./faq";
 	}
-	@GetMapping("contact.html")
+	
+	@RequestMapping(value={"contact"}, method=RequestMethod.GET)
 	public String irAcontact() {
 		return "./contact";
 	}
-	@GetMapping("login.html")
+	
+	@RequestMapping(value={"login"}, method=RequestMethod.GET)
 	public String irAlogin() {
 		return "./login";
 	}
 	
-	@GetMapping("perfilCliente.html")
+	@RequestMapping(value={"perfilCliente"}, method=RequestMethod.GET)
 	public String irAperfilCli() {
 		return "./perfilCliente";
 	}
@@ -35,19 +37,14 @@ public class HomeController {
 	public String irAHome() {
 		return "home";
 	}*/
-
-	@RequestMapping("registro/perfilCliente")
-	public String irAClientProfile() {
-		return "perfilCliente";
-	}
-
-	@RequestMapping("listClientes")
+	
+	@RequestMapping(value={"listClientes"}, method=RequestMethod.GET)
 	public String irATodosLosClientes() {
 		return "listClientes";
 	}
 
-	@RequestMapping("/shoppingCart")
+	/*@RequestMapping(value={"carrito"}, method=RequestMethod.GET)
 	public String irACarrito() {
-		return "shoppingCart";
-	}
+		return "carrito";
+	}*/
 }

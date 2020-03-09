@@ -39,37 +39,12 @@ public class Productos {
 	@NotEmpty(message="La ruta de la foto no puede estar vacía")
 	private String fotoProd;
 
-
-	
-	
-	
 	@ManyToMany(mappedBy ="carrito")
-	private List<Usuario> usuarios;	
+	private List<Usuario> usuarios;
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
 	
 	public Productos() {
 	}
@@ -157,45 +132,4 @@ public class Productos {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public List<Usuario> getUsuarios() {
-		return usuarios;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

@@ -1,4 +1,5 @@
 package com.yesi.bapro.orm.model;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,71 +22,69 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-@Entity(name = "usuarios") 
+@Entity(name = "usuarios")
 //@table(name="usuarios") sin esta connotacion, la tabla se genera de 0
 public class Usuario {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO) //IDENTITY
+	@GeneratedValue(strategy = GenerationType.AUTO) // IDENTITY
 	private Integer id;
-	@NotEmpty(message="El nombre no puede estar vacío")
-	@Size(min=2, max=30, message="El nombre debe tener entre 2 y 30 caracteres")
+	@NotEmpty(message = "El nombre no puede estar vacío")
+	@Size(min = 2, max = 30, message = "El nombre debe tener entre 2 y 30 caracteres")
 	private String nombre;
-	@NotEmpty(message="El apellido no puede estar vacío")
-	@Size(min=2, max=30, message="El apellido debe tener entre 2 y 30 caracteres")
+	@NotEmpty(message = "El apellido no puede estar vacío")
+	@Size(min = 2, max = 30, message = "El apellido debe tener entre 2 y 30 caracteres")
 	private String apellido;
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-	@NotNull(message="La fecha de nacimiento no puede estar vacía")
+	@NotNull(message = "La fecha de nacimiento no puede estar vacía")
 	private Date fechaDeNacimiento;
-	@NotEmpty(message="Debe elegir una nacionalidad")
+	@NotEmpty(message = "Debe elegir una nacionalidad")
 	private String nacionalidad;
 	@Column(nullable = false, unique = true)
-	@NotEmpty(message="El DNI no puede estar vacío")
+	@NotEmpty(message = "El DNI no puede estar vacío")
 	private String dni;
-	@NotEmpty(message="El domicilio no puede estar vacío")
-	@Size(min=12, max=120, message="El domicilio debe tener entre 12 y 120 caracteres")
+	@NotEmpty(message = "El domicilio no puede estar vacío")
+	@Size(min = 12, max = 120, message = "El domicilio debe tener entre 12 y 120 caracteres")
 	private String domicilio;
-	@NotEmpty(message="El teléfono fijo no puede estar vacío")
-	@Size(min=12, max=12, message="El teléfono fijo debe tener 12 caracteres")
+	@NotEmpty(message = "El teléfono fijo no puede estar vacío")
+	@Size(min = 12, max = 12, message = "El teléfono fijo debe tener 12 caracteres")
 	private String telFijo;
-	@NotEmpty(message="El celular no puede estar vacío")
-	@Size(min=13, max=13, message="El celular debe tener 13 caracteres")
+	@NotEmpty(message = "El celular no puede estar vacío")
+	@Size(min = 13, max = 13, message = "El celular debe tener 13 caracteres")
 	private String telCelular;
-	@NotEmpty(message="El mail no puede estar vacío")
-	//@Pattern(message="No coincide con lo esperado", regexp = "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$", flags = Flag.UNICODE_CASE)
-	@Email(message="No coincide con lo esperado")
+	@NotEmpty(message = "El mail no puede estar vacío")
+	// @Pattern(message="No coincide con lo esperado", regexp =
+	// "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$",
+	// flags = Flag.UNICODE_CASE)
+	@Email(message = "No coincide con lo esperado")
 	private String mail;
-	@NotEmpty(message="La contraseña no puede estar vacía")
-	@Pattern(message="No coincide con lo esperado", regexp = "^(?=.*\\d)(?=.*[\\u0021-\\u002b\\u003c-\\u0040])(?=.*[A-Z])(?=.*[a-z])\\S{8,16}$", flags = Flag.UNICODE_CASE)
+	@NotEmpty(message = "La contraseña no puede estar vacía")
+	// @Pattern(message="No coincide con lo esperado", regexp =
+	// "^(?=.*\\d)(?=.*[\\u0021-\\u002b\\u003c-\\u0040])(?=.*[A-Z])(?=.*[a-z])\\S{8,16}$",
+	// flags = Flag.UNICODE_CASE)
 	private String contrasenia;
-	
-	
-	
-	
+
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(
-			name="carrito",
-			joinColumns= @JoinColumn (name= "usuario_id", nullable= false),
-			inverseJoinColumns = @JoinColumn (name= "carrito_id", nullable= false)
-	
-	)
-	
-	
-	@ManyToMany(cascade=CascadeType.ALL)
+			name = "carrito", 
+			joinColumns = @JoinColumn(name = "usuario_id", nullable = false), 
+			inverseJoinColumns = @JoinColumn(name = "producto_id", nullable = false)
+			)
 	private List<Productos> carrito;
+	
+	public void addProduct(Productos producto) {
+		if (this.carrito ==null)
+		{this.carrito = new ArrayList<>();}	
+		this.carrito.add(producto);
+	}
+	
+	public List<Productos> getCarrito(){
+		return this.carrito;
+	}
+
 	
 	public Usuario() {
 		this.carrito = new ArrayList<Productos>();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	public Usuario(Integer id, String nombre, String apellido, Date fechaDeNacimiento, String nacionalidad, String dni,
 			String domicilio, String telFijo, String telCelular, String mail, String contrasenia) {
@@ -190,42 +189,4 @@ public class Usuario {
 	public void setContrasenia(String contrasenia) {
 		this.contrasenia = contrasenia;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	public void addProduct (Productos producto)
-	{
-		if (this.carrito == null) {
-			this.carrito = new ArrayList<>();
-				
-		} this.carrito.add(producto);
-	}
-	
-	public List<Productos> getCarrito(){
-		return this.carrito;
-	}
-
-
-
-
-
-
-
 }
-

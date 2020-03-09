@@ -14,13 +14,17 @@
 	<div class="contengoTodo">
 		<header>
 			<div class="contenedorLogin">
-				<a class="linkLoginMenu" th:href="@{http://localhost:50/login.html}">INICIAR SESIÓN</a>
+				<a class="linkLoginMenu" href="login">INICIAR SESIÓN</a>
 			</div>
 			<div class="contenedorLogoMenu">
-		<a th:href="@{http://localhost:50/home.html}"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
+		<a href="/home"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
 			<div class="contenedorMenu">
           <nav>
-          <a th:href="@{http://localhost:50/usuarios/add}">CLIENTES</a><a th:href="@{http://localhost:50/productos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+          <a href="/usuarios/all">CLIENTES</a>
+          <a href="/productos/all">PRODUCTOS</a>
+          <a href="/faq">FAQ</a>
+          <a href="/contact">CONTACTO</a>
+          <a href="/carrito">CARRITO</a>
           </nav>
 			</div>
 		</header>
@@ -31,7 +35,7 @@
 				alt="Juanita Jo - Imágen Publicitaria">
 		</div>
 	<main class="contenedorProductos">	
-	<a th:href="@{http://localhost:50/productos/all}">VER TODOS LOS PRODUCTOS</a>
+	<a href="/productos/all">VER TODOS LOS PRODUCTOS</a>
 	</main>
 		<!-- 
 		<main class="contenedorProductos">
@@ -202,12 +206,12 @@
 					<div class="contengoFooterMapaDelSitio">
 <ul>
 						<h3>MAPA DEL SITIO</h3>
-							<li><a th:href="@{http://localhost:50/home.html}"> HOME</a></li>
-							<li><a th:href="@{http://localhost:50/faq.html}"> FAQ</a></li>
-							<li><a th:href="@{http://localhost:50/usuarios/add}"> REGISTRATE</a></li>
-							<li><a th:href="@{http://localhost:50/login.html}"> LOGIN</a></li>
-							<li><a th:href="@{http://localhost:50/contact.html}"> CONTACTO</a></li>
-							<li><a th:href="@{http://localhost:50/perfilCliente.html}"> MI PERFIL</a></li>
+							<li><a href="/home"> HOME</a></li>
+							<li><a href="/faq"> FAQ</a></li>
+							<li><a href="/usuarios/add"> REGISTRATE</a></li>
+							<li><a href="/login"> LOGIN</a></li>
+							<li><a href="/contact"> CONTACTO</a></li>
+							<li><a href="/perfilCliente"> MI PERFIL</a></li>
 						</ul>
 					</div>
 				</div>
@@ -216,7 +220,7 @@
 					<div class="contengoFooterInfo">
 						<p>Juanita Jo es una marca registrada, © 2019.</p>
 						<p>
-							<a th:href="@{https://juanitajo.com}">https://juanitajo.com</a>
+							<a href="https://juanitajo.com">https://juanitajo.com</a>
 						<p>Diseño y desarrollo por TUVI!</p>
 					</div>
 				</div>

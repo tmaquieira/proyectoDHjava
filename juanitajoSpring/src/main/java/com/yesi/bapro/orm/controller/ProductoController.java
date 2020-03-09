@@ -60,10 +60,11 @@ public class ProductoController {
 		return "productos";
 	}
 	
-
 	@GetMapping("/edit/{id}")
 	public String editarProducto(@PathVariable("id") Productos prod, Model model) {
 		model.addAttribute("productos", prod);
+		model.addAttribute("categorias", this.categoriaJpaRepository.findAll());
+		model.addAttribute("colores", this.colorJpaRepository.findAll());
 		return ("registroProductos");
 	}
 	

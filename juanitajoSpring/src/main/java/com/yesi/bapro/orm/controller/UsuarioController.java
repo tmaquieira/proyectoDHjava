@@ -21,7 +21,6 @@ import com.yesi.bapro.orm.repository.UsuarioJpaRepository;
 public class UsuarioController {
 	@Autowired
 	UsuarioJpaRepository usuarioJpaRepository;
-	
 	//public MovieController(MovieJpaRepository movieJpaRepository){
 	//this.movieJpaRepository=movieJpaRepository;
 	//this.CategoriasJpaRepository=categoriasJpaRepository de esa manera conectamos los repositorios necesarios de la base de datos}
@@ -32,8 +31,8 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/add")
-	public String insertarUsuario(@Valid Usuario usuario, BindingResult bindingResult) {
-		if(bindingResult.hasErrors()) {
+	public String insertarUsuario(@Valid Usuario usuario, BindingResult bindingResult, String contrasenia2) {
+		if(bindingResult.hasErrors() || !(usuario.getContrasenia().equals(contrasenia2))) {
 			return "registroClientes";
 		}
 		usuarioJpaRepository.save(usuario);

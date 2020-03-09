@@ -9,6 +9,8 @@
 	href="https://fonts.googleapis.com/css?family=Oswald|Montserrat&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" href="css/estiloGlobal.css">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+
 <title>Juanita Jo | Carrito</title>
 </head>
 
@@ -17,10 +19,14 @@
 		<header>
 			<!--es el primer hijo de mi sitio, pq es lo primero q lee.  |<a href="registro.html"> REGISTRATE</a> <a href="clientProfile.html"> MI PERFIL</a>| <a href="home.html"> HOME</a>|     -->
 			<div class="contenedorLogoMenu">
-		<a th:href="@{http://localhost:50/home.html}"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
+		<a href="/home"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
 			<div class="contenedorMenu">
-          <nav>
-          <a th:href="@{http://localhost:50/usuarios/add}">CLIENTES</a><a th:href="@{http://localhost:50/productos/add}">PRODUCTOS</a><a th:href="@{http://localhost:50/faq.html}">FAQ</a><a th:href="@{http://localhost:50/contact.html}">CONTACTO</a><a class="carritoMenu" th:href="@{http://localhost:50/shoppingCart.html}"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+           <nav>
+          <a href="/usuarios/all">CLIENTES</a>
+          <a href="/productos/all">PRODUCTOS</a>
+          <a href="/faq">FAQ</a>
+          <a href="/contact">CONTACTO</a>
+          <a href="/carrito">CARRITO</a>
           </nav>
 			</div>
 		</header>
@@ -28,10 +34,51 @@
 		<main class="contenedorCarrito">
 			<h1 class="h1productDetail">DETALLE DE TU CARRITO</h1>
 			<div class="describimeCarrito">
-				<!-- cada producto va a ser un articulo-->
+				
+				
+				<h1>Productos en tu Carrito</h1>
+	<table class="table">
+	<td><form class="" method="POST" th:action="@{'/delete'}">
+			<button class="botonRegistrar" type="submit" name="borrarProd" value="borrarProd"><img src="/img/eraseIcon.png" alt="IMG eliminar"></button>
+			</form></td>
+		<thead class="thead-dark">
+			<tr>		
+				<th scope="col">Categoría</th>
+			
+				<th scope="col">ID</th>
+			
+				<th scope="col">Foto</th>
+				<th scope="col">Nombre</th>
+				<th scope="col">Descripción</th>
+				<th scope="col">Color</th>
+				<th scope="col">Precio</th>
+				<th scope="col">Stock</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="unProducto:${carrito}">
+				<td scope="row" th:text="${(unProducto.categoria != null ? unProducto.categoria.nombre : 'No tiene')}"></td>
+			<td th:text="${unProducto.id}"></td>
+				<td><img th:src="${unProducto.fotoProd != null} ? @{'/img/'+${unProducto.fotoProd}} : @{/img/prodSinFoto.png}" width="200px"/></td>
+				<td th:text="${unProducto.nombre}"></td>
+				<td th:text="${unProducto.descripcion}"></td>
+				<td th:text="${unProducto.color!=null ? unProducto.color.nombre : 'no hay por qué'}"></td>
+				<td th:text="${unProducto.precio}"></td>
+				<td th:text="${unProducto.stock}"></td>
+							
+				
+		</tbody>
+	</table>
+				
+				
+				
+				
+				
+				
+				<!-- cada producto va a ser un articulo
 				<img class="imgDelCarrito" src="img/cartera2a.jpg"
 					alt="carterita loca" width="15%">
-				<!--cada art va a tener dentro una imagen del producto, el precio y el boton de comprar-->
+			cada art va a tener dentro una imagen del producto, el precio y el boton de comprar
 				<div class="texDelCarrito">
 					<h2 class="h2FAQ">Cartera Tuvi</h2>
 					<p>COLOR: XXXX</p>
@@ -56,10 +103,13 @@
 						</p>
 					</form>
 
-				</div>
+				</div>-->
+				
+				
+				
 		</main>
 
-<footer>
+		<footer>
 			<div class="footerIconitosBellos">
 				<div class="footercontengoIconitosBellos">
 					<div class="contengoIconitoFooter">
@@ -121,17 +171,18 @@
 					</div>
 
 				</div>
+
+
 				<div class="footerMapaDelSitio">
 					<div class="contengoFooterMapaDelSitio">
-
-						<ul>
+<ul>
 						<h3>MAPA DEL SITIO</h3>
-							<li><a th:href="@{http://localhost:50/home.html}"> HOME</a></li>
-							<li><a th:href="@{http://localhost:50/faq.html}"> FAQ</a></li>
-							<li><a th:href="@{http://localhost:50/usuarios/add}"> REGISTRATE</a></li>
-							<li><a th:href="@{http://localhost:50/login.html}"> LOGIN</a></li>
-							<li><a th:href="@{http://localhost:50/contact.html}"> CONTACTO</a></li>
-							<li><a th:href="@{http://localhost:50/perfilCliente.html}"> MI PERFIL</a></li>
+							<li><a href="/home"> HOME</a></li>
+							<li><a href="/faq"> FAQ</a></li>
+							<li><a href="/usuarios/add"> REGISTRATE</a></li>
+							<li><a href="/login"> LOGIN</a></li>
+							<li><a href="/contact"> CONTACTO</a></li>
+							<li><a href="/perfilCliente"> MI PERFIL</a></li>
 						</ul>
 					</div>
 				</div>
@@ -140,7 +191,7 @@
 					<div class="contengoFooterInfo">
 						<p>Juanita Jo es una marca registrada, © 2019.</p>
 						<p>
-							<a th:href="@{https://juanitajo.com}">https://juanitajo.com</a>
+							<a href="https://juanitajo.com">https://juanitajo.com</a>
 						<p>Diseño y desarrollo por TUVI!</p>
 					</div>
 				</div>
