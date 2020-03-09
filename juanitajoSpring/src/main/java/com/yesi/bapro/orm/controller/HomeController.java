@@ -33,10 +33,6 @@ public class HomeController {
 	public String irAperfilCli() {
 		return "./perfilCliente";
 	}
-	/*@GetMapping("/")
-	public String irAHome() {
-		return "home";
-	}*/
 	
 	@RequestMapping(value={"listClientes"}, method=RequestMethod.GET)
 	public String irATodosLosClientes() {
@@ -46,5 +42,9 @@ public class HomeController {
 	/*@RequestMapping(value={"carrito"}, method=RequestMethod.GET)
 	public String irACarrito() {
 		return "carrito";
+	}*/
+	/*@GetMapping("/")
+	public String irAHome() {
+		return "home";
 	}*/
 }

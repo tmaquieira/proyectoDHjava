@@ -67,7 +67,7 @@
 			<button class="botonRegistrar" type="submit" name="borrarProd" value="borrarProd"><img src="/img/eraseIcon.png" alt="IMG eliminar"></button>
 			</form></td>
 			<td><form class="" method="POST" th:action="@{'/carrito/add/'+${unProducto.id}}">
-			<button class="botonComprar" type="submit" name="comprarProd" value="comprarProd"><img src="/img/eraseIcon.png" alt="IMG comprar"></button>
+			<button class="botonRegistrar" type="submit" name="comprarProd" value="comprarProd"><img src="/img/carrito.png" alt="IMG comprar"></button>
 			</form></td>
 				
 		</tbody>
@@ -91,25 +91,25 @@
 			<div class="footerIconitosBellos">
 				<div class="footercontengoIconitosBellos">
 					<div class="contengoIconitoFooter">
-						<img src="img/footer1.jpg" alt="Envío a domicilio a todo el país">
+						<img src="/img/footer1.jpg" alt="Envío a domicilio a todo el país">
 						<p class="pIconitos">
 							<span>ENVÍOS A TODO EL PAÍS</span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
+						<img src="/img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
 						<p class="pIconitos">
 							<span><a href="contact.html#sucursales">ENCONTRÁ NUESTRAS TIENDAS</a></span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="img/footer3.jpg" alt="Formá parte de Juanita Jo">
+						<img src="/img/footer3.jpg" alt="Formá parte de Juanita Jo">
 						<p class="pIconitos">
 							<span>FORMÁ PARTE DE JUANITA JO</span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="img/footer4.jpg" alt="Contacto Mayoristas">
+						<img src="/img/footer4.jpg" alt="Contacto Mayoristas">
 						<p class="pIconitos">
 							<span>CONTACTO PARA MAYORISTAS</span>
 						</p>
@@ -138,14 +138,16 @@
 							Newsletter</a>
 						<form class="suscribiteMini"
 							action="perfilCliente.html#suscribite" method="post">
-							<input class="inputEmailSus" type="email" name="email" value=""
+							<p><input class="inputEmailSus" type="email" name="email" value=""
 								placeholder="tumail@mail.com" required>
 							<button class="botonSuscribir" type="submit">Enviar</button>
 							</p>
 							<p class="pSuscribir">
 								<span class="errorEmailSus"></span>
 							</p>
+							
 						</form>
+					</div>
 					</div>
 
 				</div>

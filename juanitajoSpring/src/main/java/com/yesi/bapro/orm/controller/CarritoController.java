@@ -40,13 +40,13 @@ public class CarritoController {
 	@PostMapping("/add/{id}")
 	public String addProduct(@PathVariable("id") Integer id) {
 		Optional<Productos> opcion2=this.productosJpaRepository.findById(id);
-		Productos productosComprables = opcion2.get();
+		Productos producto = opcion2.get();
 		
 		Optional<Usuario> opcion=this.usuarioJpaRepository.findById((Integer) 3);
-		Usuario usuarioComprador = opcion.get();
+		Usuario usuario = opcion.get();
 		
-		usuarioComprador.addProduct(productosComprables);
-		this.usuarioJpaRepository.save(usuarioComprador);
+		usuario.addProduct(producto);
+		this.usuarioJpaRepository.save(usuario);
 		return "redirect:/productos/all";
 	}
 	
@@ -59,8 +59,15 @@ public class CarritoController {
 		return "carrito";
 	}
 	
-	/*@PostMapping(value="/delete")
-	public String deleteProductosSeleccionados (@PathVariable ("id") Integer id) {
-		return "carrito";
-	}*/
+	@PostMapping(value="/delete")
+	public String deleteProductosSeleccionados () {
+		usuarioJpaRepository.vaciarCarrito();
+		/*Optional<Usuario> opcion=this.usuarioJpaRepository.findById((Integer) 3);
+		Usuario usuario = opcion.get();
+		List<Productos> carrito = usuario.getCarrito();
+		model.addAttribute("carrito", carrito);
+
+		carrito.removeAll(carrito);*/
+		return "redirect:/carrito";
+	}
 }
