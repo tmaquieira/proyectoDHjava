@@ -7,7 +7,7 @@
 <link href="fontawesome/css/all.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Oswald|Montserrat&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/estiloGlobal.css">
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
 
 <title>Juanita Jo | Lista de Clientes</title>
 </head>
@@ -32,7 +32,7 @@
 		</header>
 		<main class="contenedorProductos">	
 			<h1>Clientes Registrados</h1>
-	<table class="table">
+	<table class="table table-striped">
 		<thead class="thead-dark">
 			<tr>
 				<th scope="col">ID</th>
@@ -79,7 +79,7 @@
 		crossorigin="anonymous"></script>-->
 		
 			</main>
-			<footer>
+		<footer>
 			<div class="footerIconitosBellos">
 				<div class="footercontengoIconitosBellos">
 					<div class="contengoIconitoFooter">
@@ -91,7 +91,8 @@
 					<div class="contengoIconitoFooter">
 						<img src="/img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
 						<p class="pIconitos">
-							<span><a href="contact.html#sucursales">ENCONTRÁ NUESTRAS TIENDAS</a></span>
+							<span><a href="contact">ENCONTRÁ
+									NUESTRAS TIENDAS</a></span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
@@ -115,22 +116,23 @@
 					<div class="contengoFooterSeguinos">
 
 						<h3>GRACIAS POR VISITARNOS</h3>
-						<h4>REDES SOCIALES</h4>
-						<nav>
-							<a href="https://www.facebook.com/juanitajofan"><i
-								class="fab fa-facebook"></i></a> <a
-								href="https://www.instagram.com/juanitajooficial"><i
-								class="fab fa-instagram"></i></a> <a
-								href="https://twitter.com/juanitajook"><i
-								class="fab fa-twitter"></i></a> <a
+						<h4>REDES SOCIALES:</h4>
+						<ul>
+							<li><a href="https://www.facebook.com/juanitajofan"><i
+									class="fab fa-facebook"></i>Facebook</a></li>
+							<li><a href="https://www.instagram.com/juanitajooficial"><i
+									class="fab fa-instagram"></i>Instagram</a></li>
+							<li><a href="https://twitter.com/juanitajook"><i
+									class="fab fa-twitter"></i>Twitter</a></li>
+							<li><a
 								href="https://api.whatsapp.com/send?phone=541128862455"><i
-								class="fab fa-whatsapp"></i></a>
-						</nav>
-						<a href="perfilCliente.html#suscribite">Suscribite a nuestro
+									class="fab fa-whatsapp"></i>WhatsApp</a></li>
+						</ul>
+						<a href="perfilCliente">Suscribite a nuestro
 							Newsletter</a>
 						<form class="suscribiteMini"
-							action="perfilCliente.html#suscribite" method="post">
-							<input class="inputEmailSus" type="email" name="email" value=""
+							action="perfilCliente" method="post">
+							<p><input class="inputEmailSus" type="email" name="email" value=""
 								placeholder="tumail@mail.com" required>
 							<button class="botonSuscribir" type="submit">Enviar</button>
 							</p>
@@ -145,8 +147,8 @@
 
 				<div class="footerMapaDelSitio">
 					<div class="contengoFooterMapaDelSitio">
-<ul>
-						<h3>MAPA DEL SITIO</h3>
+						<ul>
+							<h3>MAPA DEL SITIO</h3>
 							<li><a href="/home"> HOME</a></li>
 							<li><a href="/faq"> FAQ</a></li>
 							<li><a href="/usuarios/add"> REGISTRATE</a></li>
@@ -165,7 +167,54 @@
 						<p>Diseño y desarrollo por TUVI!</p>
 					</div>
 				</div>
+			</div>
+
 		</footer>
-		</div>
+	</div>
+
+	<script>
+		window
+				.addEventListener(
+						"load",
+						function() {
+
+							var botSuscribir = document
+									.querySelector("button.botonSuscribir");
+
+							botSuscribir
+									.addEventListener(
+											'click',
+											function(evento) {
+												var email = document
+														.querySelector("input.inputEmailSus");
+												var errorEmail = document
+														.querySelector("span.errorEmailSus");
+												var regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+
+												if (regexEmail
+														.test(email.value)) {
+													errorEmail.innerHTML = "";
+													email.style.border = "1px solid grey";
+													errorEmail.style.color = "green";
+													posiblesErrores = false;
+													if (checkBoxR.checked == true) {
+														var rememberEmail = email.value;
+													}
+												} else if (email.value == "") {
+													evento.preventDefault();
+													errorEmail.innerHTML = "Tu email es <strong>obligatorio</strong>.";
+													email.style.border = "1px solid red";
+													errorEmail.style.color = "red";
+													posiblesErrores = true;
+												} else {
+													evento.preventDefault();
+													errorEmail.innerHTML = "Tu email <strong>no</strong> es válido.";
+													email.style.border = "1px solid red";
+													errorEmail.style.color = "red";
+													posiblesErrores = true;
+												}
+											});
+						});
+	</script>
 </body>
 </html>

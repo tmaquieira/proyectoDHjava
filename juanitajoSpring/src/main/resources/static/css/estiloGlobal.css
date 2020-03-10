@@ -6,10 +6,6 @@
 	#domicilio {
 		width: 90%;
 	}
-	th, td {
-		padding: 15px;
-		text-align: left;
-	}
 	div.selectProductos select {
 		font-size: 1.25em;
 	}
@@ -208,7 +204,7 @@ body {
 	/*por default, para q no quede todo pegado a los bordes, css me da un margin predeterminado. para eliminarlo al principio del CSS pongo margin y paddin 0 */
 	margin: 0 auto;
 	padding: 0;
-	font-family: Oswald;
+	font-family: Oswald !important;
 	/*font-weight: bold;*/
 	background-color: white;
 	color: black;
@@ -427,7 +423,7 @@ h4 {
 }
 
 a:hover {
-	color: violet;
+	color: violet !important;
 }
 
 div.selectProductos select, select.contieneContacto {
@@ -568,6 +564,24 @@ article.productoDetalle a {
 	border: 0px solid transparent;
 }
 
+.botonRegistrar2{
+	font-size: 1.5em;
+	background-color: violet;
+	border-radius: 10px;
+	padding: 15px;
+	font-family: 'Oswald', cursive;
+	border: 0px solid transparent;
+}
+.botonRegistrar2 a:hover{
+	color: black !important;
+}
+td a{
+margin-top:10px;
+}
+.botonRegistrar2:hover{
+	background-color: purple;
+}
+
 .botonSuscribir {
 	font-size: 1em;
 	background-color: violet;
@@ -645,8 +659,8 @@ i {
 }
 
 a {
-	text-decoration: none;
-	color: black;
+	text-decoration: none !important;
+	color: black !important;
 }
 
 article.previewUnProducto a.verMas {
@@ -676,19 +690,19 @@ header nav a { /* el header q tiene un nav y dentro links*/
 	margin-right: 5px;
 	margin-left: 5px;
 	/* para generar espacio entre cada link. uso margin rigth pq aprovecho y separo al ultimo de lavegador*/
-	font-size: 18px;
+	font-size: 18px !important;
 }
 
 header nav a:hover {
-	color: violet;
+	color: violet !important;
 }
 
 .contieneRegistro a:hover, a.linksProfile:hover {
-	color: violet;
+	color: violet !important;
 }
 
 footer a:hover {
-	color: violet;
+	color: violet !important;
 }
 
 .footerIconitosBellos {

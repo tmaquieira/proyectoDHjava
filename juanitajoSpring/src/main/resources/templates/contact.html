@@ -176,29 +176,30 @@
 				</section>
 			</main>
 
-		<footer>
+	<footer>
 			<div class="footerIconitosBellos">
 				<div class="footercontengoIconitosBellos">
 					<div class="contengoIconitoFooter">
-						<img src="img/footer1.jpg" alt="Envío a domicilio a todo el país">
+						<img src="/img/footer1.jpg" alt="Envío a domicilio a todo el país">
 						<p class="pIconitos">
 							<span>ENVÍOS A TODO EL PAÍS</span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
+						<img src="/img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
 						<p class="pIconitos">
-							<span><a href="contact.html#sucursales">ENCONTRÁ NUESTRAS TIENDAS</a></span>
+							<span><a href="contact">ENCONTRÁ
+									NUESTRAS TIENDAS</a></span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="img/footer3.jpg" alt="Formá parte de Juanita Jo">
+						<img src="/img/footer3.jpg" alt="Formá parte de Juanita Jo">
 						<p class="pIconitos">
 							<span>FORMÁ PARTE DE JUANITA JO</span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="img/footer4.jpg" alt="Contacto Mayoristas">
+						<img src="/img/footer4.jpg" alt="Contacto Mayoristas">
 						<p class="pIconitos">
 							<span>CONTACTO PARA MAYORISTAS</span>
 						</p>
@@ -212,22 +213,23 @@
 					<div class="contengoFooterSeguinos">
 
 						<h3>GRACIAS POR VISITARNOS</h3>
-						<h4>REDES SOCIALES</h4>
-						<nav>
-							<a href="https://www.facebook.com/juanitajofan"><i
-								class="fab fa-facebook"></i></a> <a
-								href="https://www.instagram.com/juanitajooficial"><i
-								class="fab fa-instagram"></i></a> <a
-								href="https://twitter.com/juanitajook"><i
-								class="fab fa-twitter"></i></a> <a
+						<h4>REDES SOCIALES:</h4>
+						<ul>
+							<li><a href="https://www.facebook.com/juanitajofan"><i
+									class="fab fa-facebook"></i>Facebook</a></li>
+							<li><a href="https://www.instagram.com/juanitajooficial"><i
+									class="fab fa-instagram"></i>Instagram</a></li>
+							<li><a href="https://twitter.com/juanitajook"><i
+									class="fab fa-twitter"></i>Twitter</a></li>
+							<li><a
 								href="https://api.whatsapp.com/send?phone=541128862455"><i
-								class="fab fa-whatsapp"></i></a>
-						</nav>
-						<a href="perfilCliente.html#suscribite">Suscribite a nuestro
+									class="fab fa-whatsapp"></i>WhatsApp</a></li>
+						</ul>
+						<a href="perfilCliente">Suscribite a nuestro
 							Newsletter</a>
 						<form class="suscribiteMini"
-							action="perfilCliente.html#suscribite" method="post">
-							<input class="inputEmailSus" type="email" name="email" value=""
+							action="perfilCliente" method="post">
+							<p><input class="inputEmailSus" type="email" name="email" value=""
 								placeholder="tumail@mail.com" required>
 							<button class="botonSuscribir" type="submit">Enviar</button>
 							</p>
@@ -242,8 +244,8 @@
 
 				<div class="footerMapaDelSitio">
 					<div class="contengoFooterMapaDelSitio">
-<ul>
-						<h3>MAPA DEL SITIO</h3>
+						<ul>
+							<h3>MAPA DEL SITIO</h3>
 							<li><a href="/home"> HOME</a></li>
 							<li><a href="/faq"> FAQ</a></li>
 							<li><a href="/usuarios/add"> REGISTRATE</a></li>
@@ -262,95 +264,54 @@
 						<p>Diseño y desarrollo por TUVI!</p>
 					</div>
 				</div>
-		</footer>
 			</div>
 
-			<script>
+		</footer>
+	</div>
 
-	/*		fetch("https://jsonstorage.net/api/items/ac403f2d-a071-402f-9308-139c1e14d04d")
-			.then(function(respuesta){
-					return respuesta.json();
-			})
-			.then(function(data){
-					var traemeSucursal = document.querySelector("select");
-							traemeSucursal.innerHTML = "";
-							data.provincias.sort();
-					for (var i=0;i < data.provincias.length;i++){
+	<script>
+		window
+				.addEventListener(
+						"load",
+						function() {
 
-						traemeSucursal.innerHTML = traemeSucursal.innerHTML +"<option value='"+datos.provincias[i].nombre+"'>"+datos.provincias[i].id+"</option>";
-			}
-			})
-			.catch(function(error){
-			 console.log(error);
-		 });
+							var botSuscribir = document
+									.querySelector("button.botonSuscribir");
 
-JSON de SUCURSALES:
-{"sucursales":[{"nombre":"SELECCIONÁ UNA SUCURSAL","id":"0"},{"nombre":"ALTO PALERMO","id":"1"},{"nombre":"BARRIO NORTE","id":"2"},{"nombre":"CABALLITO","id":"3"},{"nombre":"CARILÓ","id":"4"},{"nombre":"EL SOLAR SHOPPING","id":"5"}
-,{"nombre":"GALERÍAS PACÍFICO","id":"6"},{"nombre":"LA PLATA","id":"7"},{"nombre":"LOMAS DE ZAMORA","id":"8"},{"nombre":"MAR DEL PLATA","id":"9"},{"nombre":"MARTINEZ","id":"10"}
-,{"nombre":"NEUQUÉN","id":"11"},{"nombre":"PALERMO SOHO","id":"12"},{"nombre":"QUILMES","id":"13"},{"nombre":"RECOLETA (OUTLET)","id":"14"},{"nombre":"ROSARIO","id":"15"}
-,{"nombre":"SAN TELMO (VINTAGE)","id":"16"},{"nombre":"TUCUMÁN","id":"17"},{"nombre":"UNICENTER","id":"18"},{"nombre":"VILLA CRESPO (OUTLET)","id":"19"},{"nombre":"BARRASHOPPING (BRASIL)","id":"20"}
-,{"nombre":"SHOPPING RIOSUL (BRASIL)","id":"21"}],"total":"22","cantidad":"22","parametros":{},"inicio":"0"}
+							botSuscribir
+									.addEventListener(
+											'click',
+											function(evento) {
+												var email = document
+														.querySelector("input.inputEmailSus");
+												var errorEmail = document
+														.querySelector("span.errorEmailSus");
+												var regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
-		 */
-
-
-		 fetch("https://apis.datos.gob.ar/georef/api/provincias")
-		 .then(function(respuesta){
-		 		return respuesta.json();
-
-		 })
-		 .then(function(data){
-		 		var capturameProvincia = document.querySelector("select");
-		 				capturameProvincia.innerHTML = "";
-		 			//	data.provincias.sort();
-		 		for (var i=0;i < data.provincias.length;i++){
-
-		 				capturameProvincia.innerHTML = capturameProvincia.innerHTML + "<option>"+data.provincias[i].nombre+" - ID:"+data.provincias[i].id+"</option>";
-		 }
-		 capturameProvincia.style.fontSize = "2em";
-		 capturameProvincia.style.fontFamily = "Oswald";
-		 capturameProvincia.style.textTransform = "uppercase";
-		 capturameProvincia.style.width = "100%";
-
-
-		 })
-		 .catch(function(error){
-		  console.log(error);
-		 });
-
-
-			window.addEventListener("load", function(){
-
-			var botSuscribir = document.querySelector("button.botonSuscribir");
-
-				botSuscribir.addEventListener('click',function(evento){
-					var email = document.querySelector("input.inputEmailSus");
-					var errorEmail = document.querySelector("span.errorEmailSus");
-					var regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-
-					if(regexEmail.test(email.value)){
-						errorEmail.innerHTML = "";
-						email.style.border = "1px solid grey";
-						errorEmail.style.color = "green";
-						posiblesErrores = false;
-						if (checkBoxR.checked == true){
-							var rememberEmail = email.value;
-						}
-					} else if (email.value == ""){
-						evento.preventDefault();
-						errorEmail.innerHTML = "Tu email es <strong>obligatorio</strong>.";
-						email.style.border = "1px solid red";
-						errorEmail.style.color = "red";
-						posiblesErrores = true;
-					} else {
-						evento.preventDefault();
-						errorEmail.innerHTML = "Tu email <strong>no</strong> es válido.";
-						email.style.border = "1px solid red";
-						errorEmail.style.color = "red";
-						posiblesErrores = true;
-					}
-				});
-			});
-			</script>
-		</body>
+												if (regexEmail
+														.test(email.value)) {
+													errorEmail.innerHTML = "";
+													email.style.border = "1px solid grey";
+													errorEmail.style.color = "green";
+													posiblesErrores = false;
+													if (checkBoxR.checked == true) {
+														var rememberEmail = email.value;
+													}
+												} else if (email.value == "") {
+													evento.preventDefault();
+													errorEmail.innerHTML = "Tu email es <strong>obligatorio</strong>.";
+													email.style.border = "1px solid red";
+													errorEmail.style.color = "red";
+													posiblesErrores = true;
+												} else {
+													evento.preventDefault();
+													errorEmail.innerHTML = "Tu email <strong>no</strong> es válido.";
+													email.style.border = "1px solid red";
+													errorEmail.style.color = "red";
+													posiblesErrores = true;
+												}
+											});
+						});
+	</script>
+</body>
 </html>

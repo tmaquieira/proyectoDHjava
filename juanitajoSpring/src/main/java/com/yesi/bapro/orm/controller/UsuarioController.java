@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import com.yesi.bapro.orm.model.Usuario;
 import com.yesi.bapro.orm.repository.UsuarioJpaRepository;
 
@@ -31,11 +33,12 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/add")
-	public String insertarUsuario(@Valid Usuario usuario, BindingResult bindingResult, String contrasenia2) {
+	public String insertarUsuario(@Valid Usuario usuario, BindingResult bindingResult, String contrasenia2, RedirectAttributes redirAtt) {
 		if(bindingResult.hasErrors() || !(usuario.getContrasenia().equals(contrasenia2))) {
 			return "registroClientes";
 		}
 		usuarioJpaRepository.save(usuario);
+		redirAtt.addFlashAttribute("mensaje", "Cliente dado de alta exitosamente :)");
 		return "redirect:/usuarios/all";
 	}
 
@@ -47,8 +50,9 @@ public class UsuarioController {
 	}
 	
 	@DeleteMapping("/delete/{id}")
-	public String deleteUsuario (@PathVariable ("id") Integer id) {
+	public String deleteUsuario (@PathVariable ("id") Integer id, RedirectAttributes redirAtt) {
 		usuarioJpaRepository.deleteById(id);
+		redirAtt.addFlashAttribute("mensaje", "Cliente eliminado exitosamente :)");
 		return "redirect:/listClientes/all";
 	}
 }
