@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="fontawesome/css/all.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald|Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/estiloGlobal.css">
+<title>Juanita Jo | Perfil de Cliente</title>
+</head>
+
+<body id=bodyContact>
+	<div class="contengoTodo">
+
+		<header>
+			<!--es el primer hijo de mi sitio, pq es lo primero q lee.  |<a href="registro.html"> REGISTRATE</a> <a href="clientProfile.html"> MI PERFIL</a>| <a href="home.html"> HOME</a>|     -->
+			<div class="contenedorLogin">
+				<a href="home">CERRAR SESIÓN</a>
+			</div>
+			<div class="contenedorLogoMenu">
+		<a href="/home"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
+			<div class="contenedorMenu">
+          <nav>
+          <a href="/usuarios/all">CLIENTES</a>
+          <a href="/productos/all">PRODUCTOS</a>
+          <a href="/faq">FAQ</a>
+          <a href="/contact">CONTACTO</a>
+          <a href="/carrito">CARRITO</a>
+          </nav>
+			</div>
+		</header>
+
+		<main class="mainClientProfile" align="center">
+			<h1 align="center">PERFIL DE CLIENTE</h1>
+
+			<section class="contieneRegistro">
+
+
+				<h2 class="h2Client">¡Hola, XXXX!</h2>
+				<p class="linksProfile">ÚLTIMO INGRESO: XX/XX/XXXX</p>
+				<a class="linksProfile" href="#"><p>HISTORIAL DE COMPRAS >></p></a>
+
+
+				<h3 class="linksProfile">CONFIGURACIÓN</h3>
+				<ul>
+					<li><a class="linksProfile" href="#">Tus Datos Personales</a></li>
+					<li><a class="linksProfile" href="#">Tus Medios de Pago</a></li>
+				</ul>
+
+				<form action="#" method="post">
+
+					<p>
+						<label for="suscripcion" id="suscribite"> ¿Querés
+							suscribite a nuestro newsletter? (Podés desuscribirte cuando
+							quieras)</label>
+					</p>
+					<p>
+						<input type="checkbox" name="sus" value="suscribime">
+						Dale!
+					<p>
+						<label for="tipoDeSuscripcion">Me interesaría recibir info
+							de...</label>
+					</p>
+					<p>
+						<input type="radio" name="gustos" value="suscarte">
+						Carteras <input type="radio" name="gustos" value="susmochi">
+						Mochilas <input type="radio" name="gustos" value="susbille">
+						Billeteras <input type="radio" name="gustos" value="sustodo">
+						Todo
+					</p>
+
+					<p>
+						<button class="botonRegistrar" type="submit" name="guardar"
+							value="enviar">Guardar</button>
+						<button class="botonRegistrar" type="reset" name="borrar"
+							value="borrar">Vaciar</button>
+					</p>
+
+				</form>
+<!--  
+				<i>Productos que quizá te interesen:</i>
+				<section class="previewDeProductos">
+					<article class="previewUnProducto">
+						<img class="imgPreviewProducto" src="img/mochila1a.jpg"
+							alt="producto">
+						<h2>Mochila Riley</h2>
+						<p class="price">$ 6.900 ARS</p>
+						<a class="verMas" href="productDetail.html"><i
+							class="fa fa-search" aria-hidden="true"></i> Quiero</a>
+					</article>
+					<article class="previewUnProducto">
+						<img class="imgPreviewProducto" src="img/cartera1a.jpg"
+							alt="producto">
+						<h2>Cartera Klimt</h2>
+						<p class="price">$ 5.500 ARS</p>
+						<a class="verMas" href="productDetail.html"><i
+							class="fa fa-search" aria-hidden="true"></i> Quiero</a>
+					</article>
+					<article class="previewUnProducto">
+						<img class="imgPreviewProducto" src="img/billetera1a.jpg"
+							alt="producto">
+						<h2>Billetera Casual</h2>
+						<p class="price">$ 2.700 ARS</p>
+						<a class="verMas" href="productDetail.html"><i
+							class="fa fa-search" aria-hidden="true"></i> Quiero</a>
+					</article>
+				</section>
+
+-->
+			</section>
+
+		</main>
+	<footer>
+			<div class="footerIconitosBellos">
+				<div class="footercontengoIconitosBellos">
+					<div class="contengoIconitoFooter">
+						<img src="/img/footer1.jpg" alt="Envío a domicilio a todo el país">
+						<p class="pIconitos">
+							<span>ENVÍOS A TODO EL PAÍS</span>
+						</p>
+					</div>
+					<div class="contengoIconitoFooter">
+						<img src="/img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
+						<p class="pIconitos">
+							<span><a href="contact">ENCONTRÁ
+									NUESTRAS TIENDAS</a></span>
+						</p>
+					</div>
+					<div class="contengoIconitoFooter">
+						<img src="/img/footer3.jpg" alt="Formá parte de Juanita Jo">
+						<p class="pIconitos">
+							<span>FORMÁ PARTE DE JUANITA JO</span>
+						</p>
+					</div>
+					<div class="contengoIconitoFooter">
+						<img src="/img/footer4.jpg" alt="Contacto Mayoristas">
+						<p class="pIconitos">
+							<span>CONTACTO PARA MAYORISTAS</span>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="contengoTodoLoDemásDelFooter">
+
+				<div class="footerSeguinos">
+					<div class="contengoFooterSeguinos">
+
+						<h3>GRACIAS POR VISITARNOS</h3>
+						<h4>REDES SOCIALES:</h4>
+						<ul>
+							<li><a href="https://www.facebook.com/juanitajofan"><i
+									class="fab fa-facebook"></i>Facebook</a></li>
+							<li><a href="https://www.instagram.com/juanitajooficial"><i
+									class="fab fa-instagram"></i>Instagram</a></li>
+							<li><a href="https://twitter.com/juanitajook"><i
+									class="fab fa-twitter"></i>Twitter</a></li>
+							<li><a
+								href="https://api.whatsapp.com/send?phone=541128862455"><i
+									class="fab fa-whatsapp"></i>WhatsApp</a></li>
+						</ul>
+						<a href="perfilCliente">Suscribite a nuestro
+							Newsletter</a>
+						<form class="suscribiteMini"
+							action="perfilCliente" method="post">
+							<p><input class="inputEmailSus" type="email" name="email" value=""
+								placeholder="tumail@mail.com" required>
+							<button class="botonSuscribir" type="submit">Enviar</button>
+							</p>
+							<p class="pSuscribir">
+								<span class="errorEmailSus"></span>
+							</p>
+						</form>
+					</div>
+
+				</div>
+
+
+				<div class="footerMapaDelSitio">
+					<div class="contengoFooterMapaDelSitio">
+						<ul>
+							<h3>MAPA DEL SITIO</h3>
+							<li><a href="/home"> HOME</a></li>
+							<li><a href="/faq"> FAQ</a></li>
+							<li><a href="/usuarios/add"> REGISTRATE</a></li>
+							<li><a href="/login"> LOGIN</a></li>
+							<li><a href="/contact"> CONTACTO</a></li>
+							<li><a href="/perfilCliente"> MI PERFIL</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footerInfo">
+					<div class="contengoFooterInfo">
+						<p>Juanita Jo es una marca registrada, © 2019.</p>
+						<p>
+							<a href="https://juanitajo.com">https://juanitajo.com</a>
+						<p>Diseño y desarrollo por TUVI!</p>
+					</div>
+				</div>
+			</div>
+
+		</footer>
+	</div>
+
+	<script>
+		window
+				.addEventListener(
+						"load",
+						function() {
+
+							var botSuscribir = document
+									.querySelector("button.botonSuscribir");
+
+							botSuscribir
+									.addEventListener(
+											'click',
+											function(evento) {
+												var email = document
+														.querySelector("input.inputEmailSus");
+												var errorEmail = document
+														.querySelector("span.errorEmailSus");
+												var regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+
+												if (regexEmail
+														.test(email.value)) {
+													errorEmail.innerHTML = "";
+													email.style.border = "1px solid grey";
+													errorEmail.style.color = "green";
+													posiblesErrores = false;
+													if (checkBoxR.checked == true) {
+														var rememberEmail = email.value;
+													}
+												} else if (email.value == "") {
+													evento.preventDefault();
+													errorEmail.innerHTML = "Tu email es <strong>obligatorio</strong>.";
+													email.style.border = "1px solid red";
+													errorEmail.style.color = "red";
+													posiblesErrores = true;
+												} else {
+													evento.preventDefault();
+													errorEmail.innerHTML = "Tu email <strong>no</strong> es válido.";
+													email.style.border = "1px solid red";
+													errorEmail.style.color = "red";
+													posiblesErrores = true;
+												}
+											});
+						});
+	</script>
+</body>
+</html>
