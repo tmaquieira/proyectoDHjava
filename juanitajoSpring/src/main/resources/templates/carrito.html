@@ -5,84 +5,102 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link href="fontawesome/css/all.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Oswald|Montserrat&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/estiloGlobal.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-<title>Juanita Jo | Lista de Productos</title>
+<link
+	href="https://fonts.googleapis.com/css?family=Oswald|Montserrat&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="css/estiloGlobal.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<title>Juanita Jo | Carrito</title>
 </head>
 
 <body>
-<div class="contengoTodo">
-
-<h2 th:if="${mensaje != null}" th:text="${mensaje}"></h2>
+	<div class="contengoTodo">
 		<header>
+					<div class="contenedorLogin">
+				<a class="linkLoginMenu" href="/home">CERRAR SESIÓN</a>
+			</div>
 			<div class="contenedorLogoMenu">
-		<a href="/home"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
+				<a href="/home"><img id="logo" src="/img/logo.png"
+					alt="Juanita Jo - Logo"></a>
+			</div>
 			<div class="contenedorMenu">
-          <nav>
-          <a href="/usuarios/all">CLIENTES</a>
-          <a href="/productos/all">PRODUCTOS</a>
-          <a href="/faq">FAQ</a>
-          <a href="/contact">CONTACTO</a>
-          <a href="/carrito">CARRITO</a>
-          </nav>
+				<nav>
+					<a href="/usuarios/all">CLIENTES</a> <a href="/productos/all">PRODUCTOS</a>
+					<a href="/faq">FAQ</a> <a href="/contact">CONTACTO</a> <a
+						href="/carrito">CARRITO</a>
+				</nav>
 			</div>
 		</header>
-		<main class="contenedorProductos">
-		<a class="botonRegistrar2" href="/productos/add"><img src="/img/newProduct.png" alt="IMG editar"></a>
-		
-			
-	<h1>Lista de todos los Productos</h1>
-	<table class="table table-striped">
-		<thead class="thead-light">
-			<tr>
-				<th scope="col">Categoría</th>
-				<th scope="col">ID</th>
-				<th scope="col">Foto</th>
-				<th scope="col">Nombre</th>
-				<th scope="col">Descripción</th>
-				<th scope="col">Color</th>
-				<th scope="col">Precio</th>
-				<th scope="col">Stock</th>
-				<th scope="col">Editar</th>
-				<th scope="col">Borrar</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="unProducto:${listaDeProductos}">
-				<td scope="row" th:text="${(unProducto.categoria != null ? unProducto.categoria.nombre : 'No tiene')}"></td>
-				<td th:text="${unProducto.id}"></td>
-				<td><img th:src="${unProducto.fotoProd != null} ? @{'/img/'+${unProducto.fotoProd}} : @{/img/prodSinFoto.png}" width="200px"/></td>
-				<!-- <td th:text="${(unProducto.categoria != null ? unProducto.categoria.nombre : 'No tiene')}"></td> -->
-				<td th:text="${unProducto.nombre}"></td>
-				<td th:text="${unProducto.descripcion}"></td>
-				<td th:text="${unProducto.color!=null ? unProducto.color.nombre : 'no hay por qué'}"></td>
-				<td th:text="${unProducto.precio}"></td>
-				<td th:text="${unProducto.stock}"></td>
-								
-				<td><a class="botonRegistrar2" th:href="@{'/productos/edit/'+${unProducto.id}}"><img src="/img/editIcon.png" alt="IMG editar"></a></td>
-							
-			<td><form class="" method="POST" th:action="@{'/productos/delete/'+${unProducto.id}}">
-			<button class="botonRegistrar2" type="submit" name="borrarProd" value="borrarProd"><img src="/img/eraseIcon.png" alt="IMG eliminar"></button>
-			</form></td>
-		</tbody>
-	</table>
 
-	<!-- Optional JavaScript 
-	 jQuery first, then Popper.js, then Bootstrap JS 
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-		crossorigin="anonymous"></script>-->
-			</main>
+		<main class="contenedorCarrito">
+			<h1 class="h1productDetail">DETALLE DE TU CARRITO</h1>
+			<div class="describimeCarrito">
+
+				<h1>Productos en tu Carrito</h1>
+				<table class="table table-hover table-dark">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Foto</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Color</th>
+							<th scope="col">Precio</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="unProducto:${carrito}">
+							<td scope="row"><img
+								th:src="${unProducto.fotoProd != null} ? @{'/img/'+${unProducto.fotoProd}} : @{/img/prodSinFoto.png}"
+								width="200px" /></td>
+							<td th:text="${unProducto.nombre}"></td>
+							<td
+								th:text="${unProducto.color!=null ? unProducto.color.nombre : 'no hay por qué'}"></td>
+							<td th:text="${unProducto.precio}"></td>
+					</tbody>
+				</table>
+				<form class="" method="POST" th:action="@{'/carrito/delete'}">
+					<button class="botonRegistrar" type="submit" name="borrarProd"
+						value="borrarProd">
+						<img src="/img/eraseIcon.png" alt="IMG eliminar"> VACIAR
+						CARRITO
+					</button>
+				</form>
+			</div>
+		</main>
+
+
+		<!-- cada producto va a ser un articulo
+				<img class="imgDelCarrito" src="img/cartera2a.jpg"
+					alt="carterita loca" width="15%">
+			cada art va a tener dentro una imagen del producto, el precio y el boton de comprar
+				<div class="texDelCarrito">
+					<h2 class="h2FAQ">Cartera Tuvi</h2>
+					<p>COLOR: XXXX</p>
+					<p>CANTIDAD: X</p>
+					<span>$ 3.599,90 (+ IVA)</span>
+
+					<form action="clientProfile.html" method="post">
+						<p>
+							<label for="pago">MÉTODO DE PAGO</label> <select name="pago"
+								id="metodoPago" required>
+								<option value="">Seleccioná uno</option>
+								<option value="e">Efectivo (Retiro en Local)</option>
+								<option value="m">TC - Mastercard</option>
+								<option value="vc">TC - Visa</option>
+								<option value="vd">TD - Visa</option>
+
+							</select>
+						</p>
+						<p>
+							<button class="laCompro" type="submit" name="quiero"
+								value="enviar">Siguiente</button>
+						</p>
+					</form>
+				</div>-->
+
+
 		<footer>
 			<div class="footerIconitosBellos">
 				<div class="footercontengoIconitosBellos">

@@ -47,7 +47,6 @@
 				<th scope="col">Descripción</th>
 				<th scope="col">Color</th>
 				<th scope="col">Precio</th>
-				<th scope="col">Stock</th>
 				<th scope="col">Comprar</th>
 			</tr>
 		</thead>
@@ -61,7 +60,6 @@
 				<td th:text="${unProducto.descripcion}"></td>
 				<td th:text="${unProducto.color!=null ? unProducto.color.nombre : 'no hay por qué'}"></td>
 				<td th:text="${unProducto.precio}"></td>
-				<td th:text="${unProducto.stock}"></td>
 								
 			<td><form class="" method="POST" th:action="@{'/carrito/add/'+${unProducto.id}}">
 			<button class="botonRegistrar2" type="submit" name="comprarProd" value="comprarProd"><img src="/img/carrito.png" alt="IMG comprar"></button>
