@@ -264,48 +264,49 @@
 	</div>
 
 	<script>
-		window
-				.addEventListener(
-						"load",
-						function() {
+	window.addEventListener("load", function(){
+        var imagenes = ["img/carrousel1.jpg","img/carrousel2.jpg","img/carrousel3.jpg"];
+        var indice = 0;
+        var traemeIMG = document.querySelector("img.carrouselLoco");
+      function timerCarrousel() {
+        indice = indice + 1;
+        traemeIMG.src = imagenes[indice];
+        if (indice >= imagenes.length) {
+         indice = 0;
+          traemeIMG.src = imagenes[indice];
+         }
+      }
+      var timer = setInterval(timerCarrousel, 3000);
+      var botSuscribir = document.querySelector("button.botonSuscribir");
 
-							var botSuscribir = document
-									.querySelector("button.botonSuscribir");
+        botSuscribir.addEventListener('click',function(evento){
+          var email = document.querySelector("input.inputEmailSus");
+          var errorEmail = document.querySelector("span.errorEmailSus");
+          var regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
-							botSuscribir
-									.addEventListener(
-											'click',
-											function(evento) {
-												var email = document
-														.querySelector("input.inputEmailSus");
-												var errorEmail = document
-														.querySelector("span.errorEmailSus");
-												var regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-
-												if (regexEmail
-														.test(email.value)) {
-													errorEmail.innerHTML = "";
-													email.style.border = "1px solid grey";
-													errorEmail.style.color = "green";
-													posiblesErrores = false;
-													if (checkBoxR.checked == true) {
-														var rememberEmail = email.value;
-													}
-												} else if (email.value == "") {
-													evento.preventDefault();
-													errorEmail.innerHTML = "Tu email es <strong>obligatorio</strong>.";
-													email.style.border = "1px solid red";
-													errorEmail.style.color = "red";
-													posiblesErrores = true;
-												} else {
-													evento.preventDefault();
-													errorEmail.innerHTML = "Tu email <strong>no</strong> es válido.";
-													email.style.border = "1px solid red";
-													errorEmail.style.color = "red";
-													posiblesErrores = true;
-												}
-											});
-						});
-	</script>
+          if(regexEmail.test(email.value)){
+            errorEmail.innerHTML = "";
+            email.style.border = "1px solid grey";
+            errorEmail.style.color = "green";
+            posiblesErrores = false;
+            if (checkBoxR.checked == true){
+              var rememberEmail = email.value;
+            }
+          } else if (email.value == ""){
+            evento.preventDefault();
+            errorEmail.innerHTML = "Tu email es <strong>obligatorio</strong>.";
+            email.style.border = "1px solid red";
+            errorEmail.style.color = "red";
+            posiblesErrores = true;
+          } else {
+            evento.preventDefault();
+            errorEmail.innerHTML = "Tu email <strong>no</strong> es válido.";
+            email.style.border = "1px solid red";
+            errorEmail.style.color = "red";
+            posiblesErrores = true;
+          }
+        });
+      });
+      </script>
 </body>
 </html>
