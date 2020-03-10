@@ -49,7 +49,7 @@ public class ProductoController {
 		}
 		//producto.setCategoria(categoria);
 		productosJpaRepository.save(producto);
-		redirAtt.addFlashAttribute("mensaje", "Producto creado exitosamente :)");
+		redirAtt.addFlashAttribute("mensaje", "Producto cargado Exitosamente :)");
 		return "redirect:/productos/all";
 	}
 	
@@ -74,14 +74,13 @@ public class ProductoController {
 			return "registroProductos";
 		}
 		productosJpaRepository.save(producto);
-		redirAtt.addFlashAttribute("mensaje", "Producto editado exitosamente :)");
+		redirAtt.addFlashAttribute("mensaje", "Producto editado Exitosamente :)");
 		return "redirect:/productos/all";
 	}
 
 	@PostMapping(value="/delete/{id}")
-	public String deleteProductos (@PathVariable ("id") Integer id, RedirectAttributes redirAtt) {
+	public String deleteProductos (@PathVariable ("id") Integer id) {
 		productosJpaRepository.deleteById(id);
-		redirAtt.addFlashAttribute("mensaje", "Producto eliminado exitosamente :)");
 		return "redirect:/productos/all";
 	}
 

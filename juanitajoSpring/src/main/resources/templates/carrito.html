@@ -5,14 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link href="fontawesome/css/all.css" rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css?family=Oswald|Montserrat&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald|Montserrat&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/estiloGlobal.css">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+
 <title>Juanita Jo | Carrito</title>
 </head>
 
@@ -20,55 +16,51 @@
 	<div class="contengoTodo">
 		<header>
 			<div class="contenedorLogoMenu">
-				<a href="/home"><img id="logo" src="/img/logo.png"
-					alt="Juanita Jo - Logo"></a>
-			</div>
+		<a href="/home"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
 			<div class="contenedorMenu">
-				<nav>
-					<a href="/usuarios/all">CLIENTES</a> <a href="/productos/all">PRODUCTOS</a>
-					<a href="/faq">FAQ</a> <a href="/contact">CONTACTO</a> <a
-						href="/carrito">CARRITO</a>
-				</nav>
+           <nav>
+          <a href="/usuarios/all">CLIENTES</a>
+          <a href="/productos/all">PRODUCTOS</a>
+          <a href="/faq">FAQ</a>
+          <a href="/contact">CONTACTO</a>
+          <a href="/carrito">CARRITO</a>
+          </nav>
 			</div>
 		</header>
 
 		<main class="contenedorCarrito">
 			<h1 class="h1productDetail">DETALLE DE TU CARRITO</h1>
 			<div class="describimeCarrito">
-
+				
+				
 				<h1>Productos en tu Carrito</h1>
-				<table class="table table-hover table-dark">
-					<thead class="thead-dark">
-						<tr>
-							<th scope="col">Foto</th>
-							<th scope="col">Nombre</th>
-							<th scope="col">Color</th>
-							<th scope="col">Precio</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="unProducto:${carrito}">
-							<td scope="row"><img
-								th:src="${unProducto.fotoProd != null} ? @{'/img/'+${unProducto.fotoProd}} : @{/img/prodSinFoto.png}"
-								width="200px" /></td>
-							<td th:text="${unProducto.nombre}"></td>
-							<td
-								th:text="${unProducto.color!=null ? unProducto.color.nombre : 'no hay por qué'}"></td>
-							<td th:text="${unProducto.precio}"></td>
-					</tbody>
-				</table>
-				<form class="" method="POST" th:action="@{'/carrito/delete'}">
-					<button class="botonRegistrar" type="submit" name="borrarProd"
-						value="borrarProd">
-						<img src="/img/eraseIcon.png" alt="IMG eliminar"> VACIAR
-						CARRITO
-					</button>
-				</form>
-			</div>
-		</main>
-
-
-		<!-- cada producto va a ser un articulo
+	<table class="table table-hover table-dark">
+		<thead class="thead-dark">
+			<tr>		
+				<th scope="col">Foto</th>
+				<th scope="col">Nombre</th>
+				<th scope="col">Color</th>
+				<th scope="col">Precio</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="unProducto:${carrito}">
+				<td scope="row"><img th:src="${unProducto.fotoProd != null} ? @{'/img/'+${unProducto.fotoProd}} : @{/img/prodSinFoto.png}" width="200px"/></td>
+				<td th:text="${unProducto.nombre}"></td>
+				<td th:text="${unProducto.color!=null ? unProducto.color.nombre : 'no hay por qué'}"></td>
+				<td th:text="${unProducto.precio}"></td>
+		</tbody>
+	</table>
+			<form class="" method="POST" th:action="@{'/carrito/delete'}">
+			<button class="botonRegistrar" type="submit" name="borrarProd" value="borrarProd"><img src="/img/eraseIcon.png" alt="IMG eliminar"></button>
+			</form>
+				
+				
+				
+				
+				
+				
+				<!-- cada producto va a ser un articulo
 				<img class="imgDelCarrito" src="img/cartera2a.jpg"
 					alt="carterita loca" width="15%">
 			cada art va a tener dentro una imagen del producto, el precio y el boton de comprar
@@ -95,33 +87,36 @@
 								value="enviar">Siguiente</button>
 						</p>
 					</form>
-				</div>-->
 
+				</div>-->
+				
+				
+				
+		</main>
 
 		<footer>
 			<div class="footerIconitosBellos">
 				<div class="footercontengoIconitosBellos">
 					<div class="contengoIconitoFooter">
-						<img src="/img/footer1.jpg" alt="Envío a domicilio a todo el país">
+						<img src="img/footer1.jpg" alt="Envío a domicilio a todo el país">
 						<p class="pIconitos">
 							<span>ENVÍOS A TODO EL PAÍS</span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="/img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
+						<img src="img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
 						<p class="pIconitos">
-							<span><a href="contact">ENCONTRÁ
-									NUESTRAS TIENDAS</a></span>
+							<span><a href="contact.html#sucursales">ENCONTRÁ NUESTRAS TIENDAS</a></span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="/img/footer3.jpg" alt="Formá parte de Juanita Jo">
+						<img src="img/footer3.jpg" alt="Formá parte de Juanita Jo">
 						<p class="pIconitos">
 							<span>FORMÁ PARTE DE JUANITA JO</span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="/img/footer4.jpg" alt="Contacto Mayoristas">
+						<img src="img/footer4.jpg" alt="Contacto Mayoristas">
 						<p class="pIconitos">
 							<span>CONTACTO PARA MAYORISTAS</span>
 						</p>
@@ -135,23 +130,22 @@
 					<div class="contengoFooterSeguinos">
 
 						<h3>GRACIAS POR VISITARNOS</h3>
-						<h4>REDES SOCIALES:</h4>
-						<ul>
-							<li><a href="https://www.facebook.com/juanitajofan"><i
-									class="fab fa-facebook"></i>Facebook</a></li>
-							<li><a href="https://www.instagram.com/juanitajooficial"><i
-									class="fab fa-instagram"></i>Instagram</a></li>
-							<li><a href="https://twitter.com/juanitajook"><i
-									class="fab fa-twitter"></i>Twitter</a></li>
-							<li><a
+						<h4>REDES SOCIALES</h4>
+						<nav>
+							<a href="https://www.facebook.com/juanitajofan"><i
+								class="fab fa-facebook"></i></a> <a
+								href="https://www.instagram.com/juanitajooficial"><i
+								class="fab fa-instagram"></i></a> <a
+								href="https://twitter.com/juanitajook"><i
+								class="fab fa-twitter"></i></a> <a
 								href="https://api.whatsapp.com/send?phone=541128862455"><i
-									class="fab fa-whatsapp"></i>WhatsApp</a></li>
-						</ul>
-						<a href="perfilCliente">Suscribite a nuestro
+								class="fab fa-whatsapp"></i></a>
+						</nav>
+						<a href="perfilCliente.html#suscribite">Suscribite a nuestro
 							Newsletter</a>
 						<form class="suscribiteMini"
-							action="perfilCliente" method="post">
-							<p><input class="inputEmailSus" type="email" name="email" value=""
+							action="perfilCliente.html#suscribite" method="post">
+							<input class="inputEmailSus" type="email" name="email" value=""
 								placeholder="tumail@mail.com" required>
 							<button class="botonSuscribir" type="submit">Enviar</button>
 							</p>
@@ -166,8 +160,8 @@
 
 				<div class="footerMapaDelSitio">
 					<div class="contengoFooterMapaDelSitio">
-						<ul>
-							<h3>MAPA DEL SITIO</h3>
+<ul>
+						<h3>MAPA DEL SITIO</h3>
 							<li><a href="/home"> HOME</a></li>
 							<li><a href="/faq"> FAQ</a></li>
 							<li><a href="/usuarios/add"> REGISTRATE</a></li>
@@ -186,9 +180,8 @@
 						<p>Diseño y desarrollo por TUVI!</p>
 					</div>
 				</div>
-			</div>
-
 		</footer>
+	</div>
 	</div>
 
 	<script>

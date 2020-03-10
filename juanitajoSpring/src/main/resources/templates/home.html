@@ -7,8 +7,6 @@
 <link href="fontawesome/css/all.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Oswald|Montserrat&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/estiloGlobal.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
 <title>Juanita Jo | E-Commerce</title>
 </head>
 
@@ -38,43 +36,6 @@
 		</div>
 	<main class="contenedorProductos">	
 	<a href="/productos/all">VER TODOS LOS PRODUCTOS</a>
-	
-	
-	<table class="table table-striped">
-		<thead class="thead-light">
-			<tr>
-				<th scope="col">Categoría</th>
-				<th scope="col">ID</th>
-				<th scope="col">Foto</th>
-				<th scope="col">Nombre</th>
-				<th scope="col">Descripción</th>
-				<th scope="col">Color</th>
-				<th scope="col">Precio</th>
-				<th scope="col">Stock</th>
-				<th scope="col">Comprar</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="unProducto:${listaDeProductos}">
-				<td scope="row" th:text="${(unProducto.categoria != null ? unProducto.categoria.nombre : 'No tiene')}"></td>
-				<td th:text="${unProducto.id}"></td>
-				<td><img th:src="${unProducto.fotoProd != null} ? @{'/img/'+${unProducto.fotoProd}} : @{/img/prodSinFoto.png}" width="200px"/></td>
-				<!-- <td th:text="${(unProducto.categoria != null ? unProducto.categoria.nombre : 'No tiene')}"></td> -->
-				<td th:text="${unProducto.nombre}"></td>
-				<td th:text="${unProducto.descripcion}"></td>
-				<td th:text="${unProducto.color!=null ? unProducto.color.nombre : 'no hay por qué'}"></td>
-				<td th:text="${unProducto.precio}"></td>
-				<td th:text="${unProducto.stock}"></td>
-								
-			<td><form class="" method="POST" th:action="@{'/carrito/add/'+${unProducto.id}}">
-			<button class="botonRegistrar2" type="submit" name="comprarProd" value="comprarProd"><img src="/img/carrito.png" alt="IMG comprar"></button>
-			</form></td>
-				
-		</tbody>
-	</table>
-	
-	
-	
 	</main>
 		<!-- 
 		<main class="contenedorProductos">
@@ -181,26 +142,25 @@
 			<div class="footerIconitosBellos">
 				<div class="footercontengoIconitosBellos">
 					<div class="contengoIconitoFooter">
-						<img src="/img/footer1.jpg" alt="Envío a domicilio a todo el país">
+						<img src="img/footer1.jpg" alt="Envío a domicilio a todo el país">
 						<p class="pIconitos">
 							<span>ENVÍOS A TODO EL PAÍS</span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="/img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
+						<img src="img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
 						<p class="pIconitos">
-							<span><a href="contact">ENCONTRÁ
-									NUESTRAS TIENDAS</a></span>
+							<span><a href="contact.html#sucursales">ENCONTRÁ NUESTRAS TIENDAS</a></span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="/img/footer3.jpg" alt="Formá parte de Juanita Jo">
+						<img src="img/footer3.jpg" alt="Formá parte de Juanita Jo">
 						<p class="pIconitos">
 							<span>FORMÁ PARTE DE JUANITA JO</span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
-						<img src="/img/footer4.jpg" alt="Contacto Mayoristas">
+						<img src="img/footer4.jpg" alt="Contacto Mayoristas">
 						<p class="pIconitos">
 							<span>CONTACTO PARA MAYORISTAS</span>
 						</p>
@@ -214,23 +174,22 @@
 					<div class="contengoFooterSeguinos">
 
 						<h3>GRACIAS POR VISITARNOS</h3>
-						<h4>REDES SOCIALES:</h4>
-						<ul>
-							<li><a href="https://www.facebook.com/juanitajofan"><i
-									class="fab fa-facebook"></i>Facebook</a></li>
-							<li><a href="https://www.instagram.com/juanitajooficial"><i
-									class="fab fa-instagram"></i>Instagram</a></li>
-							<li><a href="https://twitter.com/juanitajook"><i
-									class="fab fa-twitter"></i>Twitter</a></li>
-							<li><a
+						<h4>REDES SOCIALES</h4>
+						<nav>
+							<a href="https://www.facebook.com/juanitajofan"><i
+								class="fab fa-facebook"></i></a> <a
+								href="https://www.instagram.com/juanitajooficial"><i
+								class="fab fa-instagram"></i></a> <a
+								href="https://twitter.com/juanitajook"><i
+								class="fab fa-twitter"></i></a> <a
 								href="https://api.whatsapp.com/send?phone=541128862455"><i
-									class="fab fa-whatsapp"></i>WhatsApp</a></li>
-						</ul>
-						<a href="perfilCliente">Suscribite a nuestro
+								class="fab fa-whatsapp"></i></a>
+						</nav>
+						<a href="perfilCliente.html#suscribite">Suscribite a nuestro
 							Newsletter</a>
 						<form class="suscribiteMini"
-							action="perfilCliente" method="post">
-							<p><input class="inputEmailSus" type="email" name="email" value=""
+							action="perfilCliente.html#suscribite" method="post">
+							<input class="inputEmailSus" type="email" name="email" value=""
 								placeholder="tumail@mail.com" required>
 							<button class="botonSuscribir" type="submit">Enviar</button>
 							</p>
@@ -245,8 +204,8 @@
 
 				<div class="footerMapaDelSitio">
 					<div class="contengoFooterMapaDelSitio">
-						<ul>
-							<h3>MAPA DEL SITIO</h3>
+<ul>
+						<h3>MAPA DEL SITIO</h3>
 							<li><a href="/home"> HOME</a></li>
 							<li><a href="/faq"> FAQ</a></li>
 							<li><a href="/usuarios/add"> REGISTRATE</a></li>
@@ -265,17 +224,26 @@
 						<p>Diseño y desarrollo por TUVI!</p>
 					</div>
 				</div>
-			</div>
-
 		</footer>
+	</div>
 	</div>
 
 	<script>
-		window
-				.addEventListener(
-						"load",
-						function() {
-
+		window.addEventListener("load",	function() {
+							var imagenes = [ "img/carrousel1.jpg",
+									"img/carrousel2.jpg", "img/carrousel3.jpg" ];
+							var indice = 0;
+							var traemeIMG = document
+									.querySelector("img.carrouselLoco");
+							function timerCarrousel() {
+								indice = indice + 1;
+								traemeIMG.src = imagenes[indice];
+								if (indice >= imagenes.length) {
+									indice = 0;
+									traemeIMG.src = imagenes[indice];
+								}
+							}
+							var timer = setInterval(timerCarrousel, 3000);
 							var botSuscribir = document
 									.querySelector("button.botonSuscribir");
 

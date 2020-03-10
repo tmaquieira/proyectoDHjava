@@ -423,7 +423,7 @@ h4 {
 }
 
 a:hover {
-	color: violet !important;
+	color: violet;
 }
 
 div.selectProductos select, select.contieneContacto {
@@ -564,24 +564,6 @@ article.productoDetalle a {
 	border: 0px solid transparent;
 }
 
-.botonRegistrar2{
-	font-size: 1.5em;
-	background-color: violet;
-	border-radius: 10px;
-	padding: 15px;
-	font-family: 'Oswald', cursive;
-	border: 0px solid transparent;
-}
-.botonRegistrar2 a:hover{
-	color: black !important;
-}
-td a{
-margin-top:10px;
-}
-.botonRegistrar2:hover{
-	background-color: purple;
-}
-
 .botonSuscribir {
 	font-size: 1em;
 	background-color: violet;
@@ -698,11 +680,11 @@ header nav a:hover {
 }
 
 .contieneRegistro a:hover, a.linksProfile:hover {
-	color: violet !important;
+	color: violet;
 }
 
 footer a:hover {
-	color: violet !important;
+	color: violet;
 }
 
 .footerIconitosBellos {

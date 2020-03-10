@@ -17,6 +17,9 @@
 
 <h2 th:if="${mensaje != null}" th:text="${mensaje}"></h2>
 		<header>
+			<div class="contenedorLogin">
+				<a class="linkLoginMenu" href="/home">INICIAR SESIÓN</a>
+			</div>
 			<div class="contenedorLogoMenu">
 		<a href="/home"><img id="logo" src="/img/logo.png" alt="Juanita Jo - Logo"></a></div>
 			<div class="contenedorMenu">
@@ -30,12 +33,11 @@
 			</div>
 		</header>
 		<main class="contenedorProductos">
-		<a class="botonRegistrar2" href="/productos/add"><img src="/img/newProduct.png" alt="IMG editar"></a>
-		
+		<a href="/productos/add">CREAR NUEVO PRODUCTO</a>
 			
 	<h1>Lista de todos los Productos</h1>
 	<table class="table table-striped">
-		<thead class="thead-light">
+		<thead>
 			<tr>
 				<th scope="col">Categoría</th>
 				<th scope="col">ID</th>
@@ -45,9 +47,6 @@
 				<th scope="col">Color</th>
 				<th scope="col">Precio</th>
 				<th scope="col">Stock</th>
-				<th scope="col">Editar</th>
-				<th scope="col">Borrar</th>
-				<th scope="col">Comprar</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -62,13 +61,13 @@
 				<td th:text="${unProducto.precio}"></td>
 				<td th:text="${unProducto.stock}"></td>
 								
-				<td><a class="botonRegistrar2" th:href="@{'/productos/edit/'+${unProducto.id}}"><img src="/img/editIcon.png" alt="IMG editar"></a></td>
+				<td><a class="botonRegistrar" th:href="@{'/productos/edit/'+${unProducto.id}}"><img src="/img/editIcon.png" alt="IMG editar"></a></td>
 							
 			<td><form class="" method="POST" th:action="@{'/productos/delete/'+${unProducto.id}}">
-			<button class="botonRegistrar2" type="submit" name="borrarProd" value="borrarProd"><img src="/img/eraseIcon.png" alt="IMG eliminar"></button>
+			<button class="botonRegistrar" type="submit" name="borrarProd" value="borrarProd"><img src="/img/eraseIcon.png" alt="IMG eliminar"></button>
 			</form></td>
 			<td><form class="" method="POST" th:action="@{'/carrito/add/'+${unProducto.id}}">
-			<button class="botonRegistrar2" type="submit" name="comprarProd" value="comprarProd"><img src="/img/carrito.png" alt="IMG comprar"></button>
+			<button class="botonRegistrar" type="submit" name="comprarProd" value="comprarProd"><img src="/img/carrito.png" alt="IMG comprar"></button>
 			</form></td>
 				
 		</tbody>
@@ -88,7 +87,7 @@
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 		crossorigin="anonymous"></script>-->
 			</main>
-		<footer>
+<footer>
 			<div class="footerIconitosBellos">
 				<div class="footercontengoIconitosBellos">
 					<div class="contengoIconitoFooter">
@@ -100,8 +99,7 @@
 					<div class="contengoIconitoFooter">
 						<img src="/img/footer2.jpg" alt="Encontrá todas nuestras tiendas">
 						<p class="pIconitos">
-							<span><a href="contact">ENCONTRÁ
-									NUESTRAS TIENDAS</a></span>
+							<span><a href="contact.html#sucursales">ENCONTRÁ NUESTRAS TIENDAS</a></span>
 						</p>
 					</div>
 					<div class="contengoIconitoFooter">
@@ -125,22 +123,21 @@
 					<div class="contengoFooterSeguinos">
 
 						<h3>GRACIAS POR VISITARNOS</h3>
-						<h4>REDES SOCIALES:</h4>
-						<ul>
-							<li><a href="https://www.facebook.com/juanitajofan"><i
-									class="fab fa-facebook"></i>Facebook</a></li>
-							<li><a href="https://www.instagram.com/juanitajooficial"><i
-									class="fab fa-instagram"></i>Instagram</a></li>
-							<li><a href="https://twitter.com/juanitajook"><i
-									class="fab fa-twitter"></i>Twitter</a></li>
-							<li><a
+						<h4>REDES SOCIALES</h4>
+						<nav>
+							<a href="https://www.facebook.com/juanitajofan"><i
+								class="fab fa-facebook"></i></a> <a
+								href="https://www.instagram.com/juanitajooficial"><i
+								class="fab fa-instagram"></i></a> <a
+								href="https://twitter.com/juanitajook"><i
+								class="fab fa-twitter"></i></a> <a
 								href="https://api.whatsapp.com/send?phone=541128862455"><i
-									class="fab fa-whatsapp"></i>WhatsApp</a></li>
-						</ul>
-						<a href="perfilCliente">Suscribite a nuestro
+								class="fab fa-whatsapp"></i></a>
+						</nav>
+						<a href="perfilCliente.html#suscribite">Suscribite a nuestro
 							Newsletter</a>
 						<form class="suscribiteMini"
-							action="perfilCliente" method="post">
+							action="perfilCliente.html#suscribite" method="post">
 							<p><input class="inputEmailSus" type="email" name="email" value=""
 								placeholder="tumail@mail.com" required>
 							<button class="botonSuscribir" type="submit">Enviar</button>
@@ -156,8 +153,8 @@
 
 				<div class="footerMapaDelSitio">
 					<div class="contengoFooterMapaDelSitio">
-						<ul>
-							<h3>MAPA DEL SITIO</h3>
+<ul>
+						<h3>MAPA DEL SITIO</h3>
 							<li><a href="/home"> HOME</a></li>
 							<li><a href="/faq"> FAQ</a></li>
 							<li><a href="/usuarios/add"> REGISTRATE</a></li>
@@ -176,54 +173,7 @@
 						<p>Diseño y desarrollo por TUVI!</p>
 					</div>
 				</div>
-			</div>
-
-		</footer>
-	</div>
-
-	<script>
-		window
-				.addEventListener(
-						"load",
-						function() {
-
-							var botSuscribir = document
-									.querySelector("button.botonSuscribir");
-
-							botSuscribir
-									.addEventListener(
-											'click',
-											function(evento) {
-												var email = document
-														.querySelector("input.inputEmailSus");
-												var errorEmail = document
-														.querySelector("span.errorEmailSus");
-												var regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-
-												if (regexEmail
-														.test(email.value)) {
-													errorEmail.innerHTML = "";
-													email.style.border = "1px solid grey";
-													errorEmail.style.color = "green";
-													posiblesErrores = false;
-													if (checkBoxR.checked == true) {
-														var rememberEmail = email.value;
-													}
-												} else if (email.value == "") {
-													evento.preventDefault();
-													errorEmail.innerHTML = "Tu email es <strong>obligatorio</strong>.";
-													email.style.border = "1px solid red";
-													errorEmail.style.color = "red";
-													posiblesErrores = true;
-												} else {
-													evento.preventDefault();
-													errorEmail.innerHTML = "Tu email <strong>no</strong> es válido.";
-													email.style.border = "1px solid red";
-													errorEmail.style.color = "red";
-													posiblesErrores = true;
-												}
-											});
-						});
-	</script>
+		</div>
+				</footer>
 </body>
 </html>

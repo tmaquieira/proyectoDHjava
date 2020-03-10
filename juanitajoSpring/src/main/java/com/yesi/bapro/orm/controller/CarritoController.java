@@ -38,7 +38,7 @@ public class CarritoController {
 	UsuarioJpaRepository usuarioJpaRepository;
 
 	@PostMapping("/add/{id}")
-	public String addProduct(@PathVariable("id") Integer id, RedirectAttributes redirAtt) {
+	public String addProduct(@PathVariable("id") Integer id) {
 		Optional<Productos> opcion2=this.productosJpaRepository.findById(id);
 		Productos producto = opcion2.get();
 		
@@ -47,8 +47,6 @@ public class CarritoController {
 		
 		usuario.addProduct(producto);
 		this.usuarioJpaRepository.save(usuario);
-		redirAtt.addFlashAttribute("mensaje", "Producto agregado al Carrito. Seguí comprando :)");
-
 		return "redirect:/productos/all";
 	}
 	
